@@ -28,5 +28,6 @@ html{
 	text-decoration: none;
 }
 
-.container{					
+.container{				
+	border: 1px solid black;	
 }
