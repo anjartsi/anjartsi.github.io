@@ -1,0 +1,46 @@
+.ball,.balloutline,.ballx,.bally{
+	
+	border-radius: 50%;
+	height: 15px;
+	width: 15px;
+	background-color: blue;
+	position: absolute;
+	top: 485px;
+	left: 10px;
+
+}
+.balloutline{
+	height: 13px;
+	width: 13px;
+	background-color:white;
+	border:black 1px dashed;
+	position:absolute;
+}
+.ballx, .bally{
+	background-color: lightblue;
+	position: absolute;
+}
+
+button{
+	background-color: lightgrey;
+	text-align: center;
+	margin-left: 20px;
+}
+
+#ground{
+	border: 1px solid black;
+	width: 100%;
+	height: 0px;
+	position: absolute;
+	top: 500px;
+}
+
+
+tbody td{
+	border-bottom: 1px dashed black;
+	text-align: center;
+}
+tbody tr:first-child td{
+	border-top: 1px dashed black;
+}
+

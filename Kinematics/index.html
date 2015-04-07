@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<title>Kinematics</title>
+</head>
+<body>
+	<div class='container' id='pageHeader'>
+		<h1>Hello World</h1>
+		<div class='container' id='navBar'>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Resume/index.html">Resume</a></li>
+				<li><a href="../Physics2.0/index.html">Kinematics</a></li>
+				<li><a href="../simple-harmonic/index.html">Simple Harmonic Oscillator</a></li>
+				<li><a href="../random_student/index.html">Random Student</a></li>
+				<li><a href="../pills_riddle/index.html">Pills Riddle</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<hr>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th colspan='2'>Initial</th>
+				<th></th>
+				<th colspan='2'>Final</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th>Horizontal</th>
+				<th>Veritcal</th>
+				<th></th>
+				<th>Horizontal</th>
+				<th>Vertical</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Position</td>
+				<td id='x0'>0.0 m</td>
+				<td id='y0'> 0.0 m</td>
+				<td></td>
+				<td id='xf'></td>
+				<td id='yf'></td>
+			</tr>
+				<td>Velocity</td>
+				<td id='vx0'>4.0 m/s</td>
+				<td id='vy0'> 10 m/s</td>
+				<td></td>
+				<td id='vxf'></td>
+				<td id='vyf'></td>
+			</tr>
+				<td>Acceleration</td>
+				<td>0 m/s<sup>2</sup></td>
+				<td> -9.8 m/s<sup>2</sup></td>
+			</tr>
+			<tr>
+				<td>Time</td>
+				<td id='time'>0 s</td>
+			</tr>
+		</tbody>
+	</table>
+	<button id="start-button">Start</button>
+	<button id="stop-button">Stop</button>		
+	<button id="throw-up-button">Throw Upwards</button>
+	<button id="throw-side-button">Throw Sideways</button>
+
+	<div class='balloutline'></div>
+	<div class='ballx'></div>
+	<div class='bally'></div>
+	<div class='ball'></div>
+	<div id ='ground'></div>
+</body>
+<script type='text/javascript' src='../jquery-1.11.1.js'></script>
+<script type="text/javascript" src="physics2.0.js"></script>
+</html>

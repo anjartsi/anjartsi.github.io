@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">	
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<title>Random Student Picker</title>
+</head>
+
+<body>
+	<div class='container' id='pageHeader'>
+		<h1>Random Student Picker</h1>
+		<div class='container' id='navBar'>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Resume/index.html">Resume</a></li>
+				<li><a href="../Physics2.0/index.html">Kinematics</a></li>
+				<li><a href="../simple-harmonic/index.html">Simple Harmonic Oscillator</a></li>
+				<li><a href="../random_student/index.html">Random Student</a></li>
+				<li><a href="../pills_riddle/index.html">Pills Riddle</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<hr>
+	<hr>
+	<div class='container'id='pageBody'>	
+		<div id='buttonContainer'>
+			<button id="randomize">Pick Random Student</button>
+			<button id="reset">Reset</button>
+		</div>
+		<hr>
+		<div id='odds'>
+			<b>Chances of Getting Picked:</b>
+			<div id='chances'></div>
+		</div>
+
+		<hr>
+		<div id='studentsContainer'></div>
+		<hr>
+		<div id='chosen'></div>
+		<div class='container' id='pageFooter'></div>
+	</div>
+</body>
+
+<script type='text/javascript' src='../jquery-1.11.1.js'></script>
+<script type="text/javascript" src="random_student.js"></script>
+</html>
