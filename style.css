@@ -8,9 +8,12 @@ html{
 }
 
 #navBar{
+	border-radius: 0.4em;
 	background-color: #444566;
 	font-size: 1.2em;
 	height: 1.4em;
+	display: inline-table;
+	
 }
 
 #navBar ul{
@@ -19,11 +22,9 @@ html{
 }
 
 #navBar ul li{
-	display: inline;
+	display: inline-block;
 	margin-left: 5px;
 	margin-right: 5px;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 #navBar a:link,#navBar a:visited{
@@ -33,12 +34,10 @@ html{
 
 
 #navBar a:hover{
-	text-decoration: underline;
+	color: #AAAAFF;
 }
 
 #navBar a:active{
 	text-decoration: none;
 }
 
-.container{	
-}
