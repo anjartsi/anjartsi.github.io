@@ -2,7 +2,13 @@ html{
 	background-color: #8899CC;
 	text-align: center;
 	color: white;
+	width: 1340px;
+	margin: auto;
+	font-family: cambria, helvatica, times new roman;
+	font-size: 1em;
 }
+
+
 
 #navBar ul{
 	list-style-type: none;
