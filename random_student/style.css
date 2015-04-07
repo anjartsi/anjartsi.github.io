@@ -1,7 +1,3 @@
-html{
-	background-color: #66A3C2;
-	font-family: verdana;
-}
 .buttonBar{
 	text-align: center;
 }
@@ -22,8 +18,8 @@ button{
 	font-size: 20px;
 	display: inline;
 	margin: 2px;
-	height:75px;
-	width: 250px;
+	height:40px;
+	width: 19% ;
 	cursor: pointer;
 	-webkit-user-select: none;/*make the text in this button non-highlightable*/
 }
@@ -52,14 +48,10 @@ margin-top: 10px;
 
 
 .picked{
-	font-size: 22px;
 	color:red;
 	text-decoration: line-through;
 }
 
-h1{
-	text-align: center;
-}
 h5{
 	text-align: right;
 }

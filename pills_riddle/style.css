@@ -53,7 +53,8 @@ br{
 }
 
 .selected{
-	background-color: blue;
+	background-color: #00F;
+	color: white;
 }
 
 #numScales{
@@ -72,10 +73,12 @@ br{
 
 #leftSide, #rightSide{
 	width:22%;
+	text-align: center;
 }
 
 #middleSide{
 	width: 55%	;
+	text-align: center;
 }
 
 #riddleText{
