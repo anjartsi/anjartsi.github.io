@@ -1,6 +1,5 @@
 html{
 	background-color: #8899CC;
-	text-align: center;
 	color: white;
 	width: 1340px;
 	margin: auto;
@@ -34,6 +33,5 @@ html{
 	text-decoration: none;
 }
 
-.container{				
-	border: 1px solid black;	
+.container{	
 }
