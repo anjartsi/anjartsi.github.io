@@ -7,7 +7,11 @@ html{
 	font-size: 1em;
 }
 
-
+#navBar{
+	background-color: #444566;
+	font-size: 1.2em;
+	height: 1.4em;
+}
 
 #navBar ul{
 	list-style-type: none;
@@ -18,10 +22,13 @@ html{
 	display: inline;
 	margin-left: 5px;
 	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #navBar a:link,#navBar a:visited{
 	text-decoration: none;
+	color: white;
 }
 
 
