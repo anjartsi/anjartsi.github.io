@@ -1,10 +1,5 @@
 html{
-	font-family: Helvetica;
-	background-color: #345689;
 	-webkit-user-select:none;
-	text-align: center;
-	margin: auto;
-	color: white;
 }
 
 button{

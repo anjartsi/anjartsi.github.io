@@ -1,10 +1,11 @@
 html{
 	background-color: #8899CC;
 	color: white;
-	width: 1340px;
+	width: 1300px;
 	margin: auto;
-	font-family: cambria, helvatica, times new roman;
+	font-family: Cambria, Helvetica, "Times New Roman";
 	font-size: 1em;
+	overflow: scroll;
 }
 
 #navBar{
