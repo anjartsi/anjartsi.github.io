@@ -1,0 +1,209 @@
+html{
+	background-color: #8899CC;
+	color: white;
+	width: 1300px;
+	margin: auto;
+	font-family: Cambria, Helvetica, "Times New Roman";
+	font-size: 1em;
+	overflow: scroll;
+}
+
+#navBar{
+	border-radius: 0.4em;
+	background-color: #444566;
+	font-size: 1.2em;
+	height: 1.4em;
+	display: inline-table;
+	
+}
+
+#navBar ul{
+	list-style-type: none;
+	padding: 0px;
+}
+
+#navBar ul li{
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#navBar a:link,#navBar a:visited{
+	text-decoration: none;
+	color: white;
+}
+
+
+#navBar a:hover{
+	color: #AAAAFF;
+}
+
+#navBar a:active{
+	text-decoration: none;
+}
+
+/*********************************************
+The above was copied from the style.css from armenourfalian.com
+*/
+html{
+	-webkit-user-select:none;
+}
+#pageBody{
+	margin: auto;
+	width: 99%;
+}
+
+
+#riddleText{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+#actionWindow{
+	width:100%;
+	background-color: #7788BB;
+	border-radius: 25px;
+}
+
+.space{
+	display: inline-block;
+	float:left;
+	height:460px;
+	width:14%;
+	text-align: center;
+	background-color: #6677AA;
+	border-radius: 12px;
+}
+
+#rightSpace{
+	float: right;
+}
+
+.space>.pillBox{
+	width:33%;
+}
+
+.pillBox{
+	width: 70px;
+	height: 130px;
+	float:left;
+	border-radius: 5px;
+}
+
+#pillsContainer{	
+	width:-webkit-max-content;
+	height:200px;
+	margin:0px auto;
+	background-color: #99AADD;
+	border-radius: 12px;
+	text-align: center;
+}
+
+#pillsContainer>p{
+	width: 100%;
+}
+
+.pill{
+	height: 120px;
+	width: 60px;
+	text-align: center;
+	font-size: 2em;
+	border-radius: 40px;
+	border: 1px solid black;
+	background-color: #FFFFFF;
+	color: black;
+	cursor: -webkit-grab;
+	margin:5px;
+	float:left;
+	position:relative;
+}
+
+
+
+#scaleContainer{
+	margin-left: auto;
+	margin-right:auto;
+	padding-bottom: 20px;
+	width: 70%;
+}
+
+
+.scale{
+	text-align: center;
+	margin:0px;
+	float: left;
+	height: 210px;
+
+}
+
+.scale>h3, .scale>p{
+	width:100%;
+	text-align: center;
+	color: black;
+}
+
+
+#scaleRight, #scaleLeft{
+	width: 49%;
+	background-color: #99AADD;
+	border-radius: 12px;
+	margin: auto;
+}
+
+
+#betweenScaleGroups{
+	width: 1px;
+	margin-left:0.9%;
+	margin-right: 0.9%;
+	border-radius: 5px;
+}
+
+.feedback{
+	font-size: 20px;
+	height:120px;
+	background-color: #99AADD;
+	border-radius: 12px;
+}
+
+#scaleOneFeedback{
+	float:left;
+	width: 38%
+}
+#scaleTwoFeedback{
+	float:right;
+	width: 38%
+}
+
+#scaleComparison{
+	float:left;
+	width: 24%;
+	font-size:20px;
+}
+
+
+
+.clearBoth{
+	clear:both;
+}
+
+#buttonContainer{
+	text-align: center;
+	width: 100%;
+}
+
+button{
+	height: 50px;
+	width: 250px;
+	font-size: 2em;
+	color: black;
+	border-radius: 10px;
+}
+/*
+vertCent are divs that go inside pills
+purpose is to vertically align contents of pill
+*/
+.vertCent{
+	height:50%;
+	display:inline-block;
+	border:none;
+}
