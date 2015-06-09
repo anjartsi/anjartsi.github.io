@@ -2,7 +2,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">		
-	<link rel="stylesheet" type="text/css" href="../style.css">		
 	<title>Pills Riddle</title>
 </head>
 
@@ -11,10 +10,10 @@
 		<h1>Pills Riddle</h1>
 		<div class='container' id='navBar'>
 			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<li><a href="../simple-harmonic/index.html">Simple Harmonic Oscillator</a></li>
-				<li><a href="../random_student/index.html">Random Student</a></li>
-				<li><a href="../pills_riddle/index.html">Pills Riddle</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="simple_harmonic/index.html">Simple Harmonic Oscillator</a></li>
+				<li><a href="random_student/index.html">Random Student</a></li>
+				<li><a href="pills_riddle/index.html">Pills Riddle</a></li>
 			</ul>
 		</div>
 	</div>
@@ -71,13 +70,20 @@
 				<div class='container scale feedback' id='scaleTwoFeedback'></div>
 				<div class='clearBoth'></div>
 				<div class='container scale	 feedback disabled' id='answer'>
-					<div id='ansText'>Place Poisoned Pill Here: &#8680</div>
+					<div id='ansText'>Drag Poisoned Pill Here: &#8680</div>
+				</div>
+				<br>
+				<div class='container controls' id='controlWindow'>
+					<button class='controlButton disableDragClick' id='dragButton'>Dragging Enabled</button>
+					<button class='controlButton disableDragClick' id='clickButton'>Clicking Enabled</button>
 				</div>
 			</div>
 		</div>
 
 		<br>
+		<div class='clearBoth'></div>
 
+		<br>
 	</div>
 
 	
@@ -89,6 +95,7 @@
 	
 </body>
 <script type="text/javascript" src="app/Pill_class.js"></script>
+<script type="text/javascript" src="app/pills_riddle_initiate.js"></script>
 <script type="text/javascript" src="app/pills_riddle.js"></script>
 <script type="text/javascript" src="app/pills_riddle_scale.js"></script>
 </html>

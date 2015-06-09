@@ -17,6 +17,15 @@ var clearScale = document.getElementById('clearScale');
 var clearLeft = document.getElementById('clearLeft');
 var clearRight = document.getElementById('clearRight');
 var answer = document.getElementById('answer');
+var dragButton = document.getElementById('dragButton');
+var clickButton = document.getElementById('clickButton');
+var actionWindow = document.getElementById('actionWindow');
+var pillsContainer = document.getElementById('pillsContainer');
+var scale1 = document.getElementById('scale1');
+var scale2 = document.getElementById('scale2');
+var lSpace = document.getElementById('leftSpace');
+var rSpace = document.getElementById('rightSpace');
+
 
 var weigh = function(cont) {
 	var weight = 0;
@@ -77,6 +86,7 @@ var scaleDead = function() {
 	document.getElementById('pillBox_5_1').addEventListener('dragover', pbDragEnterListener);
 	document.getElementById('pillBox_5_1').addEventListener('dragleave', pbDragLeaveListener);
 	document.getElementById('pillBox_5_1').addEventListener('drop', pbDropListener);
+	document.getElementById('pillBox_5_1').addEventListener('mousedown', pbClickDrop);
 	document.getElementById('pillBox_5_1').addEventListener('drop', function(e){
 		var data = e.dataTransfer.getData('application/pill_number');
 		data = data.split(',');
@@ -123,11 +133,37 @@ var clearScales = function() {
 	clearLeftScale();
 }
 
+var toggleDragging = function() {
+	toggleClass(dragButton,'disableDragClick');
+	dragging = (!dragging);
+	if(dragging){
+		dragButton.innerHTML='Dragging Enabled';
+	}
+	else{
+		dragButton.innerHTML='Dragging Disabled';
+	}
+}
+
+var toggleClicking = function() {
+	toggleClass(clickButton,'disableDragClick');
+	clicking = (!clicking);
+	if(clicking){
+		clickButton.innerHTML='Clicking Enabled';
+	}
+	else{
+		clickButton.innerHTML='Clicking Disabled';
+	}
+}
+
+
 var buttonEventListeners = function() {
 	weighButton.addEventListener('mousedown',useScale);
 	clearScale.addEventListener('mousedown',clearScales);
 	clearLeft.addEventListener('mousedown',clearLeftScale);
 	clearRight.addEventListener('mousedown',clearRightScale);
+	dragButton.addEventListener('mousedown',toggleDragging);
+	clickButton.addEventListener('mousedown',toggleClicking);
+
 }
 
 buttonEventListeners();
