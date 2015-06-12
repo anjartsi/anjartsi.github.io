@@ -112,10 +112,10 @@ pillListeners.push(function(pillNum) {
 var pbDragEnterListener = function(e) {
 	removeDuplicatesFromChosen();
 	var info = e.dataTransfer.getData('application/pill_number');
+	info = info.split(',');
+	console.log("info: "+info);
 
 	if(dragging){
-		info = info.split(',');
-		console.log("info: "+info);
 		var pillNum = parseInt(info[1],10);
 		var origin = document.getElementById(info[0]);
 		var toBox = pillBoxObject(e.currentTarget); // pillBox Object
