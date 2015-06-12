@@ -113,6 +113,7 @@ var pbDragEnterListener = function(e) {
 	if(dragging){
 		var info = e.dataTransfer.getData('application/pill_number');
 		info = info.split(',');
+		console.log(info);
 		var pillNum = parseInt(info[1],10);
 		var origin = document.getElementById(info[0]);
 		var toBox = pillBoxObject(e.currentTarget); // pillBox Object
