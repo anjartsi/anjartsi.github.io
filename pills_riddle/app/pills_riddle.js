@@ -74,7 +74,9 @@ var pillDragStart = function(e) {
 		var data = [parentEl.id,pillNum];
 		// data[0] is the parent element (pillBox)
 		// data[1] is the pillNum
+		console.log("data: "+data);
 		e.dataTransfer.setData("application/pill_number", data);
+		
 	}
 }
 
@@ -113,7 +115,7 @@ var pbDragEnterListener = function(e) {
 	if(dragging){
 		var info = e.dataTransfer.getData('application/pill_number');
 		info = info.split(',');
-		console.log(info);
+		console.log("info: "+info);
 		var pillNum = parseInt(info[1],10);
 		var origin = document.getElementById(info[0]);
 		var toBox = pillBoxObject(e.currentTarget); // pillBox Object
