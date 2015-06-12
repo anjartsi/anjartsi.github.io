@@ -111,10 +111,9 @@ pillListeners.push(function(pillNum) {
 
 var pbDragEnterListener = function(e) {
 	removeDuplicatesFromChosen();
-			e.preventDefault();
+	var info = e.dataTransfer.getData('application/pill_number');
 
 	if(dragging){
-		var info = e.dataTransfer.getData('application/pill_number');
 		info = info.split(',');
 		console.log("info: "+info);
 		var pillNum = parseInt(info[1],10);
@@ -122,6 +121,7 @@ var pbDragEnterListener = function(e) {
 		var toBox = pillBoxObject(e.currentTarget); // pillBox Object
 		var destination = pillBoxID(toBox.cont,toBox.num); //pillBox Element
 		if(toBox.cont!=pillBoxObject(origin).cont){
+			e.preventDefault();
 			if(!hasClass(destination,'pillBoxHighlight'))
 			addClass(destination,'pillBoxHighlight')
 		}
