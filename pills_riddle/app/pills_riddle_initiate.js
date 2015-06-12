@@ -48,16 +48,11 @@ var pillBoxID = function(pbIndex,pbNum){
 // Input: HTML ID of a pillBox
 // Output: corresponding pillBox object
 var pillBoxObject = function(pbEl){
-	if(pbEl){
-		var pBox = pbEl.id;
-		var underscore=pBox.indexOf('_');
-		var pbCont = pBox[underscore+1];
-		var pbNum=pBox.substr(underscore+3);
-		return allPillBoxes[pbCont][pbNum];
-	}
-	else{
-		console.log('Error')
-	}
+	var pBox = pbEl.id;
+	var underscore=pBox.indexOf('_');
+	var pbCont = pBox[underscore+1];
+	var pbNum=pBox.substr(underscore+3);
+	return allPillBoxes[pbCont][pbNum];
 };
 
 //Easy way to access each pill element by its html ID
