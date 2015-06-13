@@ -6,27 +6,8 @@ var pillsOnScale=[[],[]];
 var emptyContBoxes=[];
 var difference;
 
-
-var scaleOne = document.getElementById('scaleOne');
-var scaleTwo = document.getElementById('scaleTwo');
-var scaleOneFeedback = document.getElementById('scaleOneFeedback');
-var scaleTwoFeedback = document.getElementById('scaleTwoFeedback');
-var scaleComparison = document.getElementById('scaleComparison');
-var weighButton = document.getElementById('weighButton');
-var clearScale = document.getElementById('clearScale');
-var clearLeft = document.getElementById('clearLeft');
-var clearRight = document.getElementById('clearRight');
-var answer = document.getElementById('answer');
-var dragButton = document.getElementById('dragButton');
-var clickButton = document.getElementById('clickButton');
-var actionWindow = document.getElementById('actionWindow');
-var pillsContainer = document.getElementById('pillsContainer');
-var scale1 = document.getElementById('scale1');
-var scale2 = document.getElementById('scale2');
-var lSpace = document.getElementById('leftSpace');
-var rSpace = document.getElementById('rightSpace');
-var checkAnswer = document.getElementById('checkAnswer');
-
+// Returns the combined weight of all the pills in a group of pillBoxes
+// Each pill in that group gets added to teh corresponding array of pillsOnScale
 var weigh = function(cont) {
 	var weight = 0;
 	for (var i=1;i<allPillBoxes[cont].length;i++){
@@ -49,11 +30,11 @@ var calculateDifference = function() {
 // Print which pills were weighed
 var printRecords = function(){
 	for(var i=0;i<pillsOnScale[0].length;i++){
-		scaleOneFeedback.innerHTML+='Pill_'+pillsOnScale[0][i];
-		if(i+1<pillsOnScale[0].length){scaleOneFeedback.innerHTML+=', '}
+		scaleOneFeedback.innerHTML+='Pill#'+pillsOnScale[0][i];
+		if(i+1<pillsOnScale[0].length){scaleOneFeedback.innerHTML+=' , '}
 	}
 	for(var i=0;i<pillsOnScale[1].length;i++){
-		scaleTwoFeedback.innerHTML+='Pill_'+pillsOnScale[1][i];
+		scaleTwoFeedback.innerHTML+='Pill#'+pillsOnScale[1][i];
 		if(i+1<pillsOnScale[1].length){scaleTwoFeedback.innerHTML+=', '}
 	}
 	if(scaleUses>0){
@@ -64,10 +45,9 @@ var printRecords = function(){
 
 // Print which side of the scale was heavier
 var printComparison = function() {
-	if(difference>0){scaleComparison.innerHTML+='is HEAVIER THAN';	}
-		else if(difference<0){scaleComparison.innerHTML+='is LIGHTER THAN';	}
-		else{scaleComparison.innerHTML+='weighs THE SAME AS';}
-	if(scaleUses>0){scaleComparison.innerHTML+='<hr>';}
+	if(difference>0){scaleComparison.innerHTML+='<p><span>&#8678</span> HEAVIER</p>';	}
+		else if(difference<0){scaleComparison.innerHTML+='<p>HEAVIER <span>&#8680<span></p>';	}
+		else{scaleComparison.innerHTML+='<p>SAME WEIGHT</p>';}
 }
 
 // What happens when the scale is used 3 times
@@ -79,24 +59,17 @@ var scaleDead = function() {
 	// Enable the answer div
 	removeClass(answer,'disabled');
 	addClass(answer,'enabled');
-	removeClass(checkAnswer,'disabled');
-	addClass(checkAnswer,'enabled');
+	removeClass(checkAnswerButton,'disabled');
+	addClass(checkAnswerButton,'enabled');
+}
 
-	// Create pillBox in answer div
-	pillBoxCreator(answerPB,1);
-	document.getElementById('pillBox_5_1').addEventListener('dragenter', pbDragEnterListener);
-	document.getElementById('pillBox_5_1').addEventListener('dragover', pbDragEnterListener);
-	document.getElementById('pillBox_5_1').addEventListener('dragleave', pbDragLeaveListener);
-	document.getElementById('pillBox_5_1').addEventListener('drop', pbDropListener);
-	document.getElementById('pillBox_5_1').addEventListener('mousedown', pbClickDrop);
-	document.getElementById('checkAnswer').addEventListener('click', function(e){
-		var pb = pillBoxObject(document.getElementById('pillBox_5_1'));
-		if(allPills[pb]){
-			if (allPills[pb.pill].isPoison){alert ('Well Done');}
-			else{alert("You're Dead!")}
-			
-		}
-	});
+var checkAnswer = function() {
+	var pb = pillBoxObject(document.getElementById('pillBox_5_1'));
+	var pillNum = pb.pill;
+	if(pb.isFull){
+		if (allPills[pillNum].isPoison){alert( 'Well Done');}
+		else{alert("You're Dead!")}
+	}
 }
 
 
@@ -157,14 +130,51 @@ var toggleClicking = function() {
 	}
 }
 
+var resetProblem = function() {
+	// The old poison pill is no longer the poison pill
+	allPills[poison].isPoison=false;
+	allPills[poison].weight=10;
+	// Pick a new poison pill
+	randomizePoison();
+	// Set the atributes of the new poison pill
+	allPills[poison].isPoison=true;
+	allPills[poison].weight+=poisonWeight;
+	
+	// Move all the pills to their starting location
+	for(var i=1;i<numPills+1;i++){
+		movePill(i,pillBoxID(3,i));	
+	}
+	for(var i=1;i<numPills+1;i++){
+		movePill(i,pillBoxID(0,i));	
+	}
+	// Reset the scale
+	scaleUses=3;
+	weighButton.innerHTML='Weigh (&times '+scaleUses+')';
+	// Enable the WeighButton
+	weighButton.disabled=false;
+	weighButton.style.color='';
+
+	// Disable the answer div
+	removeClass(answer,'enabled');
+	addClass(answer,'disabled');
+	removeClass(checkAnswerButton,'enabled');
+	addClass(checkAnswerButton,'disabled');
+
+	// Clear scale feedback
+	scaleOneFeedback.innerHTML='';
+	scaleTwoFeedback.innerHTML='';
+	scaleComparison.innerHTML='';
+}
 
 var buttonEventListeners = function() {
 	weighButton.addEventListener('mousedown',useScale);
-	clearScale.addEventListener('mousedown',clearScales);
-	clearLeft.addEventListener('mousedown',clearLeftScale);
-	clearRight.addEventListener('mousedown',clearRightScale);
+	clearScaleButton.addEventListener('mousedown',clearScales);
+	clearLeftButton.addEventListener('mousedown',clearLeftScale);
+	clearRightButton.addEventListener('mousedown',clearRightScale);
 	dragButton.addEventListener('mousedown',toggleDragging);
 	clickButton.addEventListener('mousedown',toggleClicking);
+	resetButton.addEventListener('mousedown',resetProblem);
+	checkAnswerButton.addEventListener('click', checkAnswer);
 
 }
 
