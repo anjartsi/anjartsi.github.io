@@ -118,6 +118,7 @@ var toggleDragging = function() {
 		dragButton.innerHTML='Dragging Disabled';
 	}
 }
+toggleDragging();// Dragging currently doesn't work so it's disabled
 
 var toggleClicking = function() {
 	toggleClass(clickButton,'disableDragClick');
@@ -171,7 +172,8 @@ var buttonEventListeners = function() {
 	clearScaleButton.addEventListener('mousedown',clearScales);
 	clearLeftButton.addEventListener('mousedown',clearLeftScale);
 	clearRightButton.addEventListener('mousedown',clearRightScale);
-	dragButton.addEventListener('mousedown',toggleDragging);
+	// dragButton.addEventListener('mousedown',toggleDragging);
+	// dragging does not work..
 	clickButton.addEventListener('mousedown',toggleClicking);
 	resetButton.addEventListener('mousedown',resetProblem);
 	checkAnswerButton.addEventListener('click', checkAnswer);
