@@ -2,6 +2,10 @@
 var dragging = true;
 var clicking = true;
 
+var dragData=[];
+
+
+
 // Moves a pill to a new pillBox
 // First it checks to see if the move is allowed
 var movePill = function(pillNum,toBox){
@@ -68,18 +72,6 @@ var checkPBox = function(fromBox,toBox,pillNum) {
 var pillBoxListeners=[];
 var pillListeners = [];
 
-var pillDragStart = function(e) {
-	if(dragging){
-		var pillNum = parseInt((e.target).innerHTML,10); // the pillNum of the dragged pill
-		allPills[pillNum].choose();
-		var parentEl = pillID(pillNum).parentElement;
-		var data = [parentEl.id,pillNum];
-		// data[0] is the parent element (pillBox)
-		// data[1] is the pillNum
-		e.dataTransfer.setData("application/pill_number", data);
-	}
-}
-
 // When a pill is hovered, slightly change its color
 var pillHoverOn = function(e) {
 	if(clicking){
@@ -107,38 +99,52 @@ var pillClick = function(e) {
 	}
 }
 
+// When dragging a pill
+var pillDragStart = function(e) {
+	if(dragging){
+		var pillNum = parseInt((e.target).innerHTML,10); // the pillNum of the dragged pill
+		allPills[pillNum].choose();
+		var parentEl = pillID(pillNum).parentElement;
+		var data = [parentEl.id,pillNum];
+		// data[0] is the parent element (pillBox)
+		// data[1] is the pillNum
+		e.dataTransfer.setData("application/pill_number", data);
+		dragData=[parentEl.id,pillNum];
+	}
+}
+
 pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('dragstart',pillDragStart);});
 pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('mouseover',pillHoverOn);});
 pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('mouseleave',pillHoverOff);});
 pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('mouseup',pillClick);});
 
 var pbDragEnterListener = function(e) {
-	// If some pills are clicked, and then dragged, the last pill gets added to chosenPills twice
-	// this function will remove the second instance of that pill
 	removeDuplicatesFromChosen(); 
-	var info = e.dataTransfer.getData('application/pill_number');
-	
 	if(dragging){
-		info = info.split(',');
-		var pillNum = parseInt(info[1],10);
-		var origin = document.getElementById(info[0]);
+		// var info = e.dataTransfer.getData('application/pill_number');
 		// Check to see if the element being dragEnter'ed is a pillBox
 		// Without this if statement, dragging a pill over another pill causes an error
-		if(e.target.id.search('pillBox_')!=-1){
-				var toBox = pillBoxObject(e.target); // pillBox Object
+		var thisObj = e.currentTarget;
+		if(thisObj.id.search('pillBox_')!=-1){
+				e.preventDefault();
+				var toBox = pillBoxObject(e.currentTarget.id); // pillBox Object
 				var destination = pillBoxID(toBox.cont,toBox.num); //pillBox Element
 				if(toBox.cont!=pillBoxObject(origin).cont){
 					e.preventDefault();
 					if(!hasClass(destination,'pillBoxHighlight'))
 					addClass(destination,'pillBoxHighlight')}
 		}
+
+		// info = info.split(',');
+		var pillNum = parseInt(dragData[1]);
+		var origin = document.getElementById(dragData[0]);
 	}
 }
 
 
 var pbDragLeaveListener = function(e) {
 	if(dragging){
-		var toBox = pillBoxObject(e.currentTarget); // pillBox Object
+		var toBox = pillBoxObject(e.currentTarget.id); // pillBox Object
 		var destination = pillBoxID(toBox.cont,toBox.num); //pillBox Element
 
 		// Sometimes a pillBox receives the pillBoxHighlight class more than once
@@ -149,11 +155,11 @@ var pbDragLeaveListener = function(e) {
 }
 
 var pbDropListener = function(e) {
-	e.preventDefault();
+	// e.preventDefault();
 	var info = e.dataTransfer.getData('application/pill_number');
 	info = info.split(',');
-	var pillNum = parseInt(info[1],10);
-	var origin = document.getElementById(info[0]);
+	var pillNum = parseInt(dragData[1],10);
+	var origin = document.getElementById(dragData[0]);
 	var toBox = pillBoxObject(e.target); // pillBox Object
 	var destination = pillBoxID(toBox.cont,toBox.num); //pillBox Element
 	var chosenCount=chosenPills.length;
@@ -187,7 +193,7 @@ var pbClickDrop = function(e) {
 pillBoxListeners.push(function(pbID){pbID.addEventListener('dragenter',pbDragEnterListener);});
 pillBoxListeners.push(function(pbID){pbID.addEventListener('dragover',pbDragEnterListener);});
 pillBoxListeners.push(function(pbID){pbID.addEventListener('dragleave',pbDragLeaveListener);});
-pillBoxListeners.push(function(pbID){pbID.addEventListener('mouseleave',pbDragLeaveListener);});
+// pillBoxListeners.push(function(pbID){pbID.addEventListener('mouseleave',pbDragLeaveListener);});
 pillBoxListeners.push(function(pbID){pbID.addEventListener('drop',pbDropListener);});
 pillBoxListeners.push(function(pbID){pbID.addEventListener('click',pbClickDrop);});
 	
@@ -206,3 +212,5 @@ for (var i=1;i<numPills+1;i++){
 		pillListeners[j](i);
 	}
 }
+
+

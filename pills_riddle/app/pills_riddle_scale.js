@@ -170,10 +170,10 @@ var buttonEventListeners = function() {
 	clearScaleButton.addEventListener('mousedown',clearScales);
 	clearLeftButton.addEventListener('mousedown',clearLeftScale);
 	clearRightButton.addEventListener('mousedown',clearRightScale);
-	// Dragging does not work, so it cannot be enabled
-	// dragButton.addEventListener('mousedown',toggleDragging);
-	// No Point in disabling clicking if dragging is always disabled
-	// clickButton.addEventListener('mousedown',toggleClicking);
+
+	dragButton.addEventListener('mousedown',toggleDragging);
+	clickButton.addEventListener('mousedown',toggleClicking);
+
 	resetButton.addEventListener('mousedown',resetProblem);
 	checkAnswerButton.addEventListener('click', checkAnswer);
 
@@ -181,4 +181,3 @@ var buttonEventListeners = function() {
 
 buttonEventListeners();
 toggleDragging();
-// Disable dragging because it does not work
