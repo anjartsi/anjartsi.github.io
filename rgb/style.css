@@ -1,0 +1,74 @@
+html{
+	-webkit-user-select:none;
+}
+
+#sliderCont{
+	float: left;
+}
+#sliderCont h3 {
+	text-align: center;
+}
+
+#redCont *{
+	color:#d11;
+}
+#greenCont *{
+	color:green;
+}
+#blueCont *{
+	color:blue;
+}
+
+.slider{
+	width:800px;
+}
+
+.sliderValue {
+	display: inline;
+	vertical-align: top;
+	padding-left: 10px;
+}
+
+#colorCont{
+	float: right;
+	text-align: center;
+}
+
+
+
+#colorBox{
+	height: 250px;
+	width: 250px;
+}
+#colName,.savedCols div{
+	background-color: white;
+	width:66%;
+	margin: 0px auto;
+	color:black;
+	text-align: center;
+	position: relative;
+	top:45%;
+	-webkit-user-select:text;
+}
+
+.btn {
+	margin:0px auto;
+}
+
+.clearBoth{
+	clear:both;
+}
+
+#savedColors{
+	width:100%;
+	text-align: center;
+	margin:15px;
+}
+
+.savedCols {
+	border: 1px solid black;
+	display:inline;
+	float:left;
+	height:250px;
+	width: 250px;
+}
