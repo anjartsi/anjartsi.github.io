@@ -8,16 +8,6 @@
 <body>
 	<header>
 		<h1>RGB Color Chooser</h1>
-		<div class='container' id='navBar'>
-			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<li><a href="../simple_harmonic/index.html">Simple Harmonic Oscillator</a></li>
-				<li><a href="../random_student/index.html">Random Student</a></li>
-				<li><a href="../pills_riddle/index.html">Pills Riddle</a></li>
-				<li><a href="../rgb/index.html">RGB Colors</a></li>
-
-			</ul>
-		</div>
 	</header>
 	
 	<hr>
@@ -40,10 +30,12 @@
 				<input class='slider' id='blue' type='range' min='0' max='255' value='150'/>
 				<div class='sliderValue' id='blueValue'>150</div>
 			</div>
-			<br>
 			<button class='btn' id='randomizeButton'>Randomize</button>
+			<br>
 		</div>
 		<div class='container' id='colorCont'>
+			<br>
+			<br>
 			<div id='colorBox'>
 				<div id='colName'></div>
 			</div>
@@ -59,5 +51,6 @@
 
 	<footer>By Armen Ourfalian</footer>
 </body>
+<script type="text/javascript" src="../navBar.js"></script>
 <script type="text/javascript" src='rgb.js'></script>
 </html>
