@@ -14,7 +14,7 @@ html{
 
 #actionWindow{
 	width:100%;
-	background-color: #7788BB;
+	background-color: #1258CE;
 	border-radius: 25px;
 	height:600px;
 }
@@ -25,7 +25,7 @@ html{
 	height:370px;
 	width:20%;
 	text-align: center;
-	background-color: #6677AA;
+	background-color: #66AADD;
 	border-radius: 12px;
 }
 
@@ -59,7 +59,7 @@ html{
 	width:-webkit-max-content;
 	height:150px;
 	margin:0px auto;
-	background-color: #99AADD;
+	background-color: #66AADD;
 	border-radius: 12px;
 	text-align: center;
 }
@@ -124,7 +124,7 @@ html{
 
 #scaleRight, #scaleLeft{
 	width: 49%;
-	background-color: #99AADD;
+	background-color: #66AADD;
 	border-radius: 12px;
 	margin: auto;
 }
@@ -147,7 +147,7 @@ html{
 
 .feedback{
 	height:95px;
-	background-color: #99AADD;
+	background-color: #66AADD;
 }
 .feedback span{
 	color:black;
@@ -247,8 +247,8 @@ html{
 #controlWindow{
 	position: relative;
 	top:-150px;
-	background-color: #7788BB;
-	padding:0px;
+	background-color: #66AADD;
+	padding:3px;
 	margin:auto;
 	width:-webkit-max-content;
 	text-align: center;
@@ -258,7 +258,7 @@ html{
 
 .controlButton{
 	margin:0px;
-	background-color: #99AADD;
+	background-color: #66AADD;
 	height: 50px;
 	width: 200px;
 	font-size: 20px;
@@ -269,7 +269,7 @@ html{
 }
 
 .disableDragClick{
-	background-color: #6677AA;
+	background-color: #1258CE;
 	border: 2px dotted #444566;
 	color: white;
 }
