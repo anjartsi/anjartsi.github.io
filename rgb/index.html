@@ -13,44 +13,81 @@
 	<hr>
 
 	<div class='container' id='pageBody'>
-		<div class='container' id='sliderCont'>
-			<div id='redCont'>
-				<h3>Red</h3>
-				<input class='slider' id='red' type='range' min='0' max='255' value='150'/>
-				<div class='sliderValue' id='redValue'>150</div>
-			</div>
-			
-			<div id='greenCont'>
-				<h3>Green</h3>
-				<input class='slider' id='green' type='range' min='0' max='255' value='150'/>
-				<div class='sliderValue' id='greenValue'>150</div>
-			</div>
-			<div id='blueCont'>
-				<h3>Blue</h3>
-				<input class='slider' id='blue' type='range' min='0' max='255' value='150'/>
-				<div class='sliderValue' id='blueValue'>150</div>
-			</div>
-			<button class='btn' id='randomizeButton'>Randomize</button>
-			<br>
+		<div class='container' id='savedColorsContainer'>
+			<div id='savedColorsScrollCont'></div>
 		</div>
-		<div class='container' id='colorCont'>
-			<br>
-			<br>
-			<div id='colorBox'>
-				<div id='colName'></div>
+
+
+		<div class='container' id='singleColorContainer'>
+			<div class='singleSliderCont red' id='redSingleSliderCont'>
+				<label for='redSingleSlider'>red</label>
+				<input class='singleSlider' id='redSingleSlider' type='range' min='0' max='255' value='215'/>
+				<div class='clearBoth'></div>
+				<div class='singleSliderValue' id='redSingleSliderValue'>215</div>
 			</div>
-			<br>
-			<button class='btn' id='saveColorButton'>Save Color</button>
+			<div class='singleSliderCont green' id='greenSingleSliderCont'>
+				<label for='greenSingleSlider'>green</label>
+				<input class='singleSlider' id='greenSingleSlider' type='range' min='0' max='255' value='215'/>
+				<div class='singleSliderValue' id='greenSingleSliderValue'>215</div>
+			</div>
+			<div class='singleSliderCont blue' id='blueSingleSliderCont'>
+				<label for='blueSingleSlider'>blue</label>
+				<input class='singleSlider' id='blueSingleSlider' type='range' min='0' max='255' value='30'/>
+				<div class='singleSliderValue' id='blueSingleSliderValue'>30</div>
+			</div>
+
+			<div id='singleColorOutputContainer'>
+				<div id='singleColorOutput'>
+					<div id='singleColorOutputValue'>
+						<div id='rgbValue'>RGB:(215,215,30)</div>
+						<div id='hexValue'>Hexadecimal:#D7D71E</div>
+					</div>
+				</div>
+				<button id='randomColorButton'>Random Color</button>
+				<button id='saveColorButton'>Save Color</button>
+			</div>
 		</div>
 		<div class='clearBoth'></div>
-		<div class='container' id='savedColors'></div>
+		<hr>
+		<div class='container' id='gradientsContainer'>
+			<div id='redGrad' class='colorGradient'>
+				<canvas id='redCanvas' class='gradientCanvas'>
+					Sorry, it seems that your browser does not support HTML Canvas
+				</canvas>
+				<h4 class='red'>Constant Red</h4>
+				<input class='gradientSlider' id='redGradSlider' type='range' min='0' max='255' value='215'/>
+					<div class='gradientSliderValue red' id='redGradValue'>215</div>
+			</div>
+			<div id='greenGrad' class='colorGradient'>
+				<canvas id='greenCanvas' class='gradientCanvas'>
+					Sorry, it seems that your browser does not support HTML Canvas
+				</canvas>
+				<h4 class='green'>Constant Green</h4>
+				<input class='gradientSlider' id='greenGradSlider' type='range' min='0' max='255' value='215'/>
+					<div class='gradientSliderValue green'  id='greenGradValue'>215</div>
+				
+			</div>
+			<div id='blueGrad' class='colorGradient'>
+				<canvas id='blueCanvas' class='gradientCanvas'>
+					Sorry, it seems that your browser does not support HTML Canvas
+				</canvas>
+				<h4 class='blue'>Constant Blue</h4>
+				<input class='gradientSlider' id='blueGradSlider' type='range' min='0' max='255' value='30'/>
+					<div class='gradientSliderValue blue' id='blueGradValue'>30</div>
+				
+			</div>
+		</div>
+		<div class='container' id='savedGradientColorsContainer'>
+			<div id='savedGradientColorsScrollCont'></div>
+		</div>
+
 		<div class='clearBoth'></div>
 	</div>
-	
 	<hr>
-
 	<footer>By Armen Ourfalian</footer>
 </body>
 <script type="text/javascript" src="../navBar.js"></script>
-<script type="text/javascript" src='rgb.js'></script>
+<script type="text/javascript" src='app/rgb.js'></script>
+<script type="text/javascript" src='app/gradients.js'></script>
+<script type="text/javascript" src='app/gradientCursors.js'></script>
 </html>

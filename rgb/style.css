@@ -2,100 +2,159 @@ html{
 	-webkit-user-select:none;
 }
 
-#sliderCont{
-	float: left;
-	width:70%;
-}
-#sliderCont h3 {
-	text-align: center;
-}
-
-#redCont *{
-	color:#d11;
-}
-#greenCont *{
-	color:green;
-}
-#blueCont *{
-	color:#2b2bc7;
-}
-
-.slider{
-	width:100%;
-	cursor:pointer;
-}
-
-.slider::-webkit-slider-thumb{
-	border: 2px solid #000000;
-	height: 36px;
-	width: 16px;
-	border-radius: 3px;
-	background: #ffffff;
-	cursor: pointer;
-
-}
-
-.sliderValue {
-	float:right;
-	vertical-align: top;
-	padding-left: 10px;
-}
-
-#colorCont{
-	float:right;
-	width: 29%;
-	text-align: center;
-}
-
-
-
-#colorBox{
-	height: 250px;
-	width: 100%;
-}
-#colName{
-	background-color: white;
-	width:66%;
-	margin: 0px auto;
-	color:black;
-	text-align: center;
-	position: relative;
-	top:45%;
-	-webkit-user-select:text;
-}
-
-.btn {
-	display:inline;
-	margin:0px auto;
-}
-
 .clearBoth{
 	clear:both;
 }
-
-#savedColors{
-	width:100%;
-	height: 152px;
-	overflow: auto;
-	text-align: center;
+/************************************
+Saved Colors: Single and Gradient;
+************************************/
+#savedColorsContainer {
+	width: 750px;
+	height:250px;
 }
-
-.savedCols {
-	padding:0px;
-	border: 1px solid black;
-	display:inline;
+#savedGradientColorsContainer {
+	width:430px;
+	height: 250px;
+}
+#savedColorsContainer, #savedGradientColorsContainer {
+	float: right;
+	overflow-x: auto;
+	overflow-y:hidden;
+	white-space: nowrap;
+}
+#savedColorsScrollCont, #savedGradientColorsScrollCont {
+	margin-top: 25px;
+	width:-webkit-max-content;
+	height: 200px;
+	white-space: nowrap;
+}
+.savedColors {
 	float:left;
-	height:75px;
-	width: 250px;
+	height: 200px;
+	width:200px;
+	border: 1px solid black;
+}
+.savedColorsGradient {
+	float:left;
+	height:150px;
+	width:150px;
+}
+.savedColorsGradient * {
+	text-align: center;
+	background-color: white;
+	color: black;
+	width:130px;
+	height:50px;
+	margin-top:50px;
+	margin-left: 10px;
 }
 
-.savedCols div{
-	background-color: white;
-	width:200px;
-	margin: 0px auto;
-	color:black;
+}
+/**********************************
+Single Color Sliders
+***********************************/
+#singleColorContainer {
+	width: 500px;
+	height: 300px;
+}
+
+.singleSliderCont {
+	height: 300px;
+	width:50px;
+	float:left;
+	margin-left:10px;
 	text-align: center;
-	position: relative;
-	top:17px;
-	-webkit-user-select:text;
+}
+
+.singleSliderCont label {
+	display:inline;
+	text-align: center;
+}
+
+.singleSlider {
+	width:250px;
+	-webkit-transform:rotate(-90deg);
+	position:relative;
+	top:120px;
+	left:-103px;
+}
+
+.singleSliderValue {
+	position:relative;
+	top:230px;
+}
+
+#singleColorOutputContainer {
+	height:300px;
+	width:300px;
+	float:right;
+	margin-right:5px;
+	text-align: center;	
+}
+
+#singleColorOutput {
+	height: 200px;
+	width:	200px;
+	border: 1px solid black;
+	margin: 25px auto 0px auto;
+}
+
+.savedColorValue, #singleColorOutputValue {
+	color:black;
+	height:80px;
+	width:190px;
+	margin-top:60px;
+	margin-left:3px;
+	border: 2px solid black;
+	background-color: white;
+}
+.savedColors *, #singleColorOutputValue *{
+	text-align: left;
+	font-size: 18px;
+	margin: 11px 0px 0px 0px;
+}
+button {
+	height:50px;
+}
+
+/******************************
+Gradient Color Outputs
+******************************/
+
+#gradientsContainer {
+	margin-top: 15px;
+	float: left;
+	width:850px;
+	height:350px;
+}
+
+.red{	color:#d11;}
+.green{	color:green;}
+.blue{color:#2b2bc7;}
+
+.colorGradient {
+	width: 255px;
+	float:left;
+	/*border: 1px solid black;*/
+}
+
+#greenGrad {
+	margin-left: 31px;
+	margin-right: 31px;
+}
+
+.gradientCanvas {
+	background-color: white;
+	border: 1px solid black;
+	display: inline;
+}
+
+.gradientSlider {
+	margin:auto;
+	width:255px;
+}
+
+.colorGradient h4 {
+	margin:0px;
+	text-align: center;
 }
