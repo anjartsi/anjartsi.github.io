@@ -33,6 +33,7 @@ Saved Colors: Single and Gradient;
 	height: 200px;
 	width:200px;
 	border: 1px solid black;
+	-webkit-user-select:auto;
 }
 .savedColorsGradient {
 	float:left;
@@ -47,6 +48,7 @@ Saved Colors: Single and Gradient;
 	height:50px;
 	margin-top:50px;
 	margin-left: 10px;
+	-webkit-user-select:auto;
 }
 
 }
@@ -90,6 +92,7 @@ Single Color Sliders
 	float:right;
 	margin-right:5px;
 	text-align: center;	
+	-webkit-user-select:auto;
 }
 
 #singleColorOutput {
