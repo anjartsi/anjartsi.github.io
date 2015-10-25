@@ -1,0 +1,20 @@
+html{
+	-webkit-user-select:none;
+}
+.about {
+	width: 600px;
+	height: 600px;
+	margin-left: 33px;
+	display: inline-block;
+	text-align: center;
+}
+
+.clearBoth {
+	clear:both;
+}
+
+img {
+	background-color: white;
+	border: 1px solid black;
+	float:left;
+}

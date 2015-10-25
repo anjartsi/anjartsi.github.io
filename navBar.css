@@ -8,6 +8,10 @@ html{
 	overflow: scroll;
 }
 
+body{
+	width:100%;
+}
+
 #navBar{
 	border-radius: 0.4em;
 	background-color: #1166aa;
