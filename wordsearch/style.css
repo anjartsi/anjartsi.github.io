@@ -1,3 +1,7 @@
+html {
+	-webkit-user-select: none;
+}
+
 .canvasCont {
 	margin: 0px auto;
 	width: -webkit-min-content;
