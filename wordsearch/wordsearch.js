@@ -23,7 +23,7 @@ for(var i=0; i<prbSize; i++) {
 }
 
 // List of words to search for, all upper case
-var wordList = ["hello","world"];
+var wordList = ["Eddie","Mezian"];
 for(var i = 0, l = wordList.length; i < l; i++) {
   wordList[i]=wordList[i].toUpperCase();
 }
@@ -168,5 +168,5 @@ var fixFirstCharArray = function() {
   }
 }
 
-insertWord(10,15,"hello",0,-1);
-insertWord(24,0,"world",-1,1);
+insertWord(10,15,"eddie",0,-1);
+insertWord(24,0,"mezian",-1,1);
