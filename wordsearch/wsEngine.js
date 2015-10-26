@@ -3,28 +3,6 @@ Initialize the word search
 
 This file uses the Letter object defined in letter.js
 *************************************************/
-//problem size
-var prbSize = 15;
-var fontSize = 25; // Need a better name for this variable
-
-// wordList
-// List of words to search for, all upper case
-// wordList starts out as a string but is converted to an array
-var wordList = "hello world foo bar lorem ipsum armen ourfalian";
-wordList = wordList.toUpperCase();
-wordList = wordList.split(' ');
-
-// charList
-// All the letters that make up the words
-var charList = [];
-for(var i = 0, l = wordList.length; i < l; i++) {
-  for(var j = 0,ll = wordList[i].length; j < ll; j++) {
-    if (charList.indexOf(wordList[i][j]) < 0) {
-      charList.push(wordList[i][j]);
-    }
-  }
-}
-
 
 // canvas stuff
 var wordsearch = document.getElementById('wordsearch');
@@ -174,9 +152,11 @@ var removeDuplicatesFromFirstChar = function() {
     // Only keep the 2nd instance of the repeat
   }
   // Merge listOfDups from arrays of length 1 into 1 array
-  listOfDups = listOfDups.reduce(function(a,b) {
-    return a.concat(b)
-  });
+  if(listOfDups.length>0) {
+    listOfDups = listOfDups.reduce(function(a,b) {
+      return a.concat(b)
+    });
+  }
 
   listOfDups.sort();
   
