@@ -7,9 +7,10 @@
 </head>
 
 <body>
-	<header class='' id='pageHeader'>
+	<header>
 		<h1>Pills Riddle</h1>
 	</header>
+	<nav></nav>
 	<hr>
 
 	<div class=''id='pageBody'> 	
@@ -74,25 +75,27 @@
 				<button class='btn' id='resetButton'>Reset</button>
 					<button class='controlButton disableDragClick' id='dragButton'>Dragging Enabled</button>
 					<button class='controlButton disableDragClick' id='clickButton'>Clicking Enabled</button>
+					<div class='clearBoth'></div>
 				</div>
 			</div>
 		</div>
-
-		<br>
+	</div>
 		<div class='clearBoth'></div>
 
+		<br><hr>
 
-		<br>
-	</div>
-
+	<article id='about'>
+		<div id='expand'>[ &plus; ]</div>
+		<h2>About This Page:</h2>
+		<p class='hide'>This page is about:</p>
+	</article>
 	
 	<hr>
-	<div class='' id='pageFooter'>
-		<h3>By Armen Ourfalian</h3>
-	</div>
-
 	
+	<footer>By Armen Ourfalian</footer>
 </body>
+
+<script type="text/javascript" src="../globalFunctions.js"></script>
 <script type="text/javascript" src="../navBar.js"></script>
 <script type="text/javascript" src="app/Pill_class.js"></script>
 <script type="text/javascript" src="app/pills_riddle_initiate.js"></script>

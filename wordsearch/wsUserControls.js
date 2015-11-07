@@ -12,7 +12,7 @@ var listHighlighted = [];
 var start = [null,null];
 
 var wsMouseDown = function(e) {
-    clearHighlight(false);  
+  clearHighlight(false);  
   clicking = true;
   var col = Math.floor(e.offsetX/fontSize);
   var row = Math.floor(e.offsetY/fontSize);
@@ -72,6 +72,8 @@ var wsMouseUp = function(e) {
   }
   // Clear the start array for next mouseDown event
   start = [null,null];
+  
+  clearHighlight(false);
 }
 
 var wsMouseMove = function(e) {

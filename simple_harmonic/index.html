@@ -2,16 +2,17 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">	
-	<link rel="stylesheet" type="text/css" href="../navBar.css 	">
-	<title>Simple Harmonic Oscillator</title>
+	<link rel="stylesheet" type="text/css" href="../navBar.css">
+	<title>simple-harmonic</title>
 </head>
 
 <body>
-	<header class='container' id='pageHeader'>
+	<header>
 		<h1>Simple Harmonic Oscillator</h1>
 	</header>
 	
-	<hr>
+	<nav></nav>
+	
 	<hr>
 	<div class='container'id='pageBody'>	
 		<div class='container' id='initialValues'>
@@ -62,12 +63,22 @@
 		</div>
 		<hr>
 	</div>
+
+	<article id='about'>
+		<div id='expand'>[ &plus; ]</div>
+		<h2>About This Page:</h2>
+		<p class='hide'>This page is about:</p>
+	</article>
+	
+	<hr>
+
 	<div class='container' id='pageFooter'>
 		<h3>By Armen Ourfalian</h3>
 	</div>
 </body>
 
+<script type="text/javascript" src="../globalFunctions.js"></script>
 <script type="text/javascript" src="../navBar.js"></script>
-<script type='text/javascript' src='../jquery-1.11.1.js'></script>
+<script type='text/javascript' src='jquery-1.11.1.js'></script>
 <script type="text/javascript" src="simple-harmonic.js"></script>
 </html>

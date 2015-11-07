@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,9 @@
 	<header class='container' id='pageHeader'>
 		<h1>Random Student Picker</h1>
 	</header>
-	
+	<nav></nav>
 	<hr>
-		<div class='container'id='pageBody'>	
+	<div class='container'id='pageBody'>	
 		<div id='buttonContainer'>
 			<button id="randomize">Pick Random Student</button>
 			<button id="reset">Reset</button>
@@ -29,9 +30,18 @@
 		<div id='chosen'></div>
 		<div class='container' id='pageFooter'></div>
 	</div>
+	<hr>
+	<article id='about'>
+		<div id='expand'>[ &plus; ]</div>
+		<h2>About This Page:</h2>
+		<p class='hide'>This page is about:</p>
+	</article>
+	
+	<hr>	
 </body>
 
+<script type="text/javascript" src="../globalFunctions.js"></script>
 <script type="text/javascript" src="../navBar.js"></script>
-<script type='text/javascript' src='../jquery-1.11.1.js'></script>
+<script type='text/javascript' src='jquery-1.11.1.js'></script>
 <script type="text/javascript" src="random_student.js"></script>
 </html>
