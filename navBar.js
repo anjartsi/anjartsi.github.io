@@ -1,7 +1,6 @@
 // home page
 if(document.getElementsByTagName('title')[0].innerHTML == 'Armen Ourfalian') {
-	document.getElementsByTagName('header')[0].innerHTML+= "<div class='container' id='navBar'>"
-		+ 	"<ul>"
+	document.getElementsByTagName('nav')[0].innerHTML+= "<ul>"
 		+ 		"<li><a href='index.html'>Home</a></li>"
 		+ 		"<li><a href='simple_harmonic/index.html'>Simple Harmonic Oscillator</a></li>"
 		+ 		"<li><a href='random_student/index.html'>Random Student</a></li>"
@@ -9,15 +8,12 @@ if(document.getElementsByTagName('title')[0].innerHTML == 'Armen Ourfalian') {
 		+ 		"<li><a href='wordsearch/index.html'>Word Search</a></li>"
 		+ 		"<li><a href='rgb/index.html'>RGB Colors</a></li>"
 		+ 		"<li><a href='physics_engine/index.html'>Physics Engine</a></li>"
-		+ 	"</ul>"
-		+ "</div>";
-
+		+ 	"</ul>";
 }
 
 // Every other page
 else {
-	document.getElementsByTagName('header')[0].innerHTML+= "<div class='container' id='navBar'>"
-		+ 	"<ul>"
+	document.getElementsByTagName('nav')[0].innerHTML+= "<ul>"
 		+ 		"<li><a href='../index.html'>Home</a></li>"
 		+ 		"<li><a href='../simple_harmonic/index.html'>Simple Harmonic Oscillator</a></li>"
 		+ 		"<li><a href='../random_student/index.html'>Random Student</a></li>"
@@ -26,5 +22,22 @@ else {
 		+ 		"<li><a href='../rgb/index.html'>RGB Colors</a></li>"
 		+ 		"<li><a href='../physics_engine/index.html'>Physics Engine</a></li>"
 		+ 	"</ul>"
-		+ "</div>";
 }
+
+// Make the About this Page section expandable
+document.getElementById('about').addEventListener('click', function() {
+	// In case there are multiple <p> elements in it,
+	// Hide all the <p>'s inside the about section
+	var paragraphs = document.getElementById('about').getElementsByTagName('p');
+	for(var i = 0, l = paragraphs.length; i < l; i++) {
+		toggleClass(paragraphs[i],'hide');
+	}
+
+	// Change the plus/minus sign accordingly
+	if(hasClass(paragraphs[0],'hide')) {
+		document.getElementById('expand').innerHTML='[ &plus; ]';
+	}
+	else {
+		document.getElementById('expand').innerHTML='[ &minus; ]';	
+	}
+})

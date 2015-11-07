@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">	
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 	<link rel="stylesheet" type="text/css" href="navBar.css">	
 	<title>Armen Ourfalian</title>
 </head>
 
 <body>
-	<header class='container' id='pageHeader'>
+	<header>
 		<h1>Hello World</h1>
 	</header>
 	
+	<nav></nav>
+
 	<hr>
 	
 	<div class='container' id='pageBody'>
-		<div class='container about'>
-			<h2>About Me</h2>
-			<img src="armen_o.jpg">
-		</div>
-		<div class='container about'>
-			<h2>About this Website</h2>
-		</div>
+		
 
-		<div class='clearBoth'></div>
 	</div>
 	
 	<hr>
+	
+	<article id='about'>
+		<div id='expand'>[ &plus; ]</div>
+		<h2>About This Page:</h2>
+		<p class='hide'>This page is about:</p>
+	</article>
 
+	<hr>
 	<div class='container' id='pageFooter'>
 		Contact me at <a href='mailto:aourfalian@gmail.com'>aourfalian@gmail.com</a>
 	</div>
+	
+
 </body>
 
+<script type="text/javascript" src="globalFunctions.js"></script>
 <script type="text/javascript" src="navBar.js"></script>
 </html>

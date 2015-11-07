@@ -12,7 +12,7 @@ body{
 	width:100%;
 }
 
-#navBar{
+nav{
 	border-radius: 0.4em;
 	background-color: #1166aa;
 	font-size: 1.2em;
@@ -21,7 +21,7 @@ body{
 	display: inline-table;
 }
 
-#navBar ul{
+nav ul{
 	list-style-type: none;
 	margin-top: 0.6em;
 	margin-bottom: 0.6em;
@@ -30,7 +30,7 @@ body{
 	padding: 0px;
 }
 
-#navBar ul li{
+nav ul li{
 	display: inline-block;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -38,17 +38,38 @@ body{
 	margin-bottom: 0px;
 }
 
-#navBar a:link,#navBar a:visited{
+nav a:link, nav a:visited{
 	text-decoration: none;
 	color: white;
 }
 
 
-#navBar a:hover{
+nav a:hover{
 	color: #AAAAFF;
 }
 
-#navBar a:active{
+nav a:active{
 	text-decoration: none;
 }
 
+#about, #about * {
+	padding: 0px;
+	margin-bottom: 0px 0px 0px 0px;
+	cursor: pointer;
+}
+
+#about #expand {
+	display: inline;
+	float:right;
+	width:50px;
+	text-align: center;
+}
+
+#about p {
+	margin-bottom: 0px;
+	clear:both;
+}
+
+.hide {
+	display:none;
+}
