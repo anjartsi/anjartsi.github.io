@@ -156,6 +156,9 @@ Gradient Color Outputs
 	margin:auto;
 	width:255px;
 }
+.gradientSliderValue {
+	text-align: center;
+}
 
 .colorGradient h4 {
 	margin:0px;

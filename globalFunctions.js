@@ -8,14 +8,13 @@ function randomNotReally() {
     return x - Math.floor(x);
 }
 
-// returns a random number between max and min (inclusive)
+// returns a random INTEGER between max and min (inclusive)
 // Note: this isn't really random, but it's a work-around so I can seed the random number
 // uncomment the first line and delete the second to make it random every time
 // See the randomNotReally function above
-var rand = function(min,max){
-  // return Math.floor(min+(max-min+1)*Math.random());
-  return Math.floor(min+(max-min+1)*randomNotReally());
-
+var randomInt = function(min,max){
+  // return Math.floor(min + (max - min + 1) * Math.random());
+  return Math.floor(min + (max - min + 1) * randomNotReally());
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HTML Classes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

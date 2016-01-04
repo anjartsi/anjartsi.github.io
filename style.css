@@ -1,20 +1,41 @@
 html{
 	-webkit-user-select:none;
 }
-.about {
-	width: 600px;
-	height: 600px;
-	margin-left: 33px;
-	display: inline-block;
-	text-align: center;
-}
-
 .clearBoth {
 	clear:both;
 }
 
-img {
-	background-color: white;
-	border: 1px solid black;
-	float:left;
+
+
+a:visited {
+	color: blue;
+}
+
+#aboutme h2 {
+	text-align: center;
+}
+#aboutme{
+	font-size: 1.3em;
+}
+#aboutme a{
+	text-decoration: none;
+	
+}
+
+#me {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+footer ul, footer h3 {
+	margin:0px;
+}
+footer ul li {
+	display: inline;
+	margin-right: 20px;
+}
+footer li a {
+	text-decoration: none;
 }

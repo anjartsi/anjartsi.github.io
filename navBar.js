@@ -28,13 +28,11 @@ else {
 document.getElementById('about').addEventListener('click', function() {
 	// In case there are multiple <p> elements in it,
 	// Hide all the <p>'s inside the about section
-	var paragraphs = document.getElementById('about').getElementsByTagName('p');
-	for(var i = 0, l = paragraphs.length; i < l; i++) {
-		toggleClass(paragraphs[i],'hide');
-	}
-
+	var aboutContents = document.getElementById('aboutContents');
+	toggleClass(aboutContents,'hide');
+	
 	// Change the plus/minus sign accordingly
-	if(hasClass(paragraphs[0],'hide')) {
+	if(hasClass(aboutContents,'hide')) {
 		document.getElementById('expand').innerHTML='[ &plus; ]';
 	}
 	else {

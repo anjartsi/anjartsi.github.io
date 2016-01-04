@@ -12,7 +12,6 @@ var wordList = "armen made this";
 wordList = wordList.toUpperCase();
 wordList = wordList.split(' ');
 
-// charList
 // All the letters that make up the words
 var charList = [];
 for(var i = 0, l = wordList.length; i < l; i++) {

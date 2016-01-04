@@ -15,10 +15,10 @@ body{
 nav{
 	border-radius: 0.4em;
 	background-color: #1166aa;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	height: 2.4em;
 	width: 100%;
-	display: inline-table;
+	display: inline-block;
 }
 
 nav ul{
@@ -66,6 +66,7 @@ nav a:active{
 }
 
 #about p {
+	font-size: 1.3em;
 	margin-bottom: 0px;
 	clear:both;
 }

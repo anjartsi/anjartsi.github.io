@@ -33,10 +33,10 @@ printArray();
 // Will randomly insert the input into arrayOfLetters
 // If word doesn't fit, will try again
 var insertRandom = function(word) {
-  var row = rand(0,prbSize - 1);
-  var col = rand(0,prbSize - 1);
-  var dirX = rand(-1, 1);
-  var dirY = rand(-1, 1);
+  var row = randomInt(0,prbSize - 1);
+  var col = randomInt(0,prbSize - 1);
+  var dirX = randomInt(-1, 1);
+  var dirY = randomInt(-1, 1);
   
   // dirX and dirY can't both be negative
   if(dirX == 0 && dirY ==0) {

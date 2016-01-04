@@ -2,6 +2,7 @@ var drawCursor = function(ctx,x,y,text) {
 	ctx.save();
 	ctx.translate(x,y);
 	ctx.fillStyle = 'black';
+	// Draw 4 rectangles around clicked spot to create a cursor shape
 	ctx.fillRect(-1,-6,2,4);
 	ctx.fillRect(-6,-1,4,2);
 	ctx.fillRect(-1,2,2,4);
@@ -9,6 +10,7 @@ var drawCursor = function(ctx,x,y,text) {
 	ctx.scale(1,-1);
 	ctx.font = "16px serif";
 	var notCent = true;
+	// These if statements move the position of the text in case they are too close to the edges
 	if(x<60) {
 		ctx.textAlign='left';
 		ctx.translate(10,4);
@@ -34,7 +36,11 @@ var drawCursor = function(ctx,x,y,text) {
 var printColor = function(r,g,b) {
 
 	document.getElementById('savedGradientColorsScrollCont').innerHTML+='<div class="savedColorsGradient" style="background-color:'
-	+outputRGB(r,g,b)+'"><div>'+outputRGB(r,g,b).toUpperCase()+'<br>#'+hex(r)+hex(g)+hex(b)+'</div></div>';
+																																			+outputRGB(r,g,b)
+																																			+'"><div>'
+																																			+outputRGB(r,g,b).toUpperCase()
+																																			+'<br>#'+hex(r)+hex(g)+hex(b)
+																																			+'</div></div>';
 	document.getElementById('savedGradientColorsContainer').scrollLeft += 2000;
 }
 
