@@ -1,6 +1,7 @@
 html{
 	background-color: #3388cc;
 	color: white;
+	/*width: 1300px;*/
 	width: 1300px;
 	margin: auto;
 	font-family: Cambria, Helvetica, "Times New Roman";
@@ -12,45 +13,72 @@ body{
 	width:100%;
 }
 
+/* The nav bar*/
 nav{
-	border-radius: 0.4em;
-	background-color: #1166aa;
-	font-size: 1.3em;
-	height: 2.4em;
-	width: 100%;
+	background-color: #222244;
+	font-size: 25px;
+	height: 60px;
 	display: inline-block;
+	width: 100%;
+	margin-left:0px;
+	position: relative;
+	left:-8px;
+
 }
 
+/* The list in navbar should fill up the entire nav bar*/
 nav ul{
+	height: 100%;
 	list-style-type: none;
-	margin-top: 0.6em;
-	margin-bottom: 0.6em;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0px;
+
 }
 
+/* The li's need to be inline-block so they're all on one line*/
 nav ul li{
 	display: inline-block;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+	padding-left: 6px;
+	padding-right: 4px;
+	border-right: 2px solid black;
 }
 
+/* The link to the current page should be highlighted */
+nav .thisPage{
+	background-color: #2277bb;
+}
+
+/* 
+	The links in the nav bar should be vertically centered
+		The block display allows the link to be hovered even when the 
+		mouse hovers the block (not just the text)
+*/
 nav a:link, nav a:visited{
+	padding-top: 15px;
+	height: 45px;
+	/*the above two have to add up to 40px because that's the height of the navbar*/
+	
 	text-decoration: none;
 	color: white;
+	display: block;
 }
 
 
-nav a:hover{
-	color: #AAAAFF;
+nav li:hover, nav a:hover{
+	background-color: white;
+	color: #222244;
 }
 
 nav a:active{
 	text-decoration: none;
+	color: blue;
 }
+
+
+/* The below deals with the "About this Page" section in each page*/
 
 #about, #about * {
 	padding: 0px;
@@ -58,11 +86,12 @@ nav a:active{
 	cursor: pointer;
 }
 
-#about #expand {
+#expand {
+	font-weight: bold;
 	display: inline;
 	float:right;
 	width:50px;
-	text-align: center;
+	text-align: right;
 }
 
 #about p {

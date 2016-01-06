@@ -10,7 +10,6 @@
 		<h1>RGB Color Chooser</h1>
 	</header>
 	<nav></nav>
-	<hr>
 
 	<div class='container' id='pageBody'>
 		<div class='container' id='savedColorsContainer'>
@@ -89,7 +88,18 @@
 		<div id='expand'>[ &plus; ]</div>
 		<h2>About This Page:</h2>
 		<article id='aboutContents' class='hide'>
-			<p>This page is about:</p>
+			<p>
+				I've seen a few versions of "HTML Color Picker" online and I always thought I could do better. My initial idea consisted only of the first section in the page (with the 3 sliders), and it ended up taking much less time than I thought it would (I have HTML canvas to thank for that), and didn't look nearly as cool as I thought (again, using 'cool' pretty liberally here). 
+			</p>
+			<p>
+				Wanting to do more, I thought about a more user-friendly (cooler) way of displaying a wider array of colors. The biggest problem being RGB colors are 3-dimensional (one more dimension than what my screen has). So I went to my Physics roots: break up a 3-D problem into three 2-D problems because <i>those</i> are much easier.
+			</p>
+			<p>
+				Putting in the cursors (those little crosshairs that show what color you clicked on) was a stroke of genius, but they gave me much more trouble than I'd like to admit, to the point where I had to draw an x-y graph on paper and figure out where I wanted the damn rectangles to be. Sometimes you just gotta do things the old-school way.
+			</p>
+			<p>
+				One cool side effect of this project was my hex() function. It turns any decimal number (max 255) into a hexadecimal number. I know I could have written a more wide ranging function that doesn't have a maximum, but I decided not to spend another hour reinventing the wheel and went with the "good enough" approach.
+			</p>
 		</article>
 	</section>
 	

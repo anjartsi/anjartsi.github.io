@@ -1,5 +1,6 @@
+var pageTitle = document.getElementsByTagName('title')[0].innerHTML;
 // home page
-if(document.getElementsByTagName('title')[0].innerHTML == 'Armen Ourfalian') {
+if(pageTitle == 'Armen Ourfalian') {
 	document.getElementsByTagName('nav')[0].innerHTML+= "<ul>"
 		+ 		"<li><a href='index.html'>Home</a></li>"
 		+ 		"<li><a href='simple_harmonic/index.html'>Simple Harmonic Oscillator</a></li>"
@@ -23,6 +24,26 @@ else {
 		+ 		"<li><a href='../physics_engine/index.html'>Physics Engine</a></li>"
 		+ 	"</ul>"
 }
+
+// Make the link to the current page a different color
+var titles = [
+	"Armen Ourfalian",
+	"Simple Harmonic Oscillator",
+	"Random Student Picker",
+	"Pills Riddle",
+	"Armen's Wordsearch",
+	"RGB",
+	"Physics Engine"
+]
+
+for (var i = 0; i < titles.length; i++) {
+	if(pageTitle == titles[i]) {
+		var hi = document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0].childNodes[i];
+		addClass(hi,'thisPage')
+		console.log(hi)
+	}
+}
+
 
 // Make the About this Page section expandable
 document.getElementById('about').addEventListener('click', function() {
