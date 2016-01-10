@@ -42,10 +42,19 @@ text-align: center;
 margin-top: 10px;
 }
 
+#chosenCont{
+	/*background-color: red;*/
+	margin-top: 16px;
+	font-size: 25px;
+}
+
 #chosen{
 	font-size: 50px;
 	text-align: center;
+	width:100%;
 	height: 70px;
+	margin-top:-24px;
+	color: red;
 }
 .picked{
 	font-size: 22px;
