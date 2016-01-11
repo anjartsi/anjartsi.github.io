@@ -101,6 +101,15 @@ nav a:active{
 	clear:both;
 }
 
+#about .eqn {
+	display: inline block;
+	/*font-style: italic;*/
+	font-weight: bold;
+	color: #22a;
+	margin: 0px 3px; 
+}
+
 .hide {
 	display:none;
 }
+

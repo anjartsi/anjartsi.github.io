@@ -67,7 +67,24 @@
 		<div id='expand'>[ &plus; ]</div>
 		<h2>About This Page:</h2>
 		<article id='aboutContents' class='hide'>
-			<p>Update coming soon!</p>
+			<p>
+				This was one of my earliest projects ever. I had <i>just</i> learned how to manipulate HTML elements with javascript (jquery to be exact). I made this page more out of necessity than anything else; I needed to show my students how a Simple Harmonic Oscillator works. To make a long story short: this idea was insanely successful, and I used this page in class for weeks.
+			</p>
+			<p>
+				A lot of the script that runs this page is not to my liking: it is barely commented, badly written, and not applicable to much else outside of this project. I didn't know how HTML canvas worked at the time, so everything on this page is either a picture or a div. I eventually found out that there are <i>much</i> better ways of creating animations. Instead of making changes to this page, I decided to leave it as-is and began working on my Physics Engine page. This page serves as a reminder of how far I've come.
+			</p>
+			<p>
+				Enough coding jibber jabber, let's talk Physics (you know you want to!) As far as making all the calculations for the harmonic oscillator, I tried really hard to code it in an "anything can happen" sort of way: create a spring force that is exerted on the block: <span class='eqn'>F<sub>spr</sub> = &minus;k x</span>, and cause the block to accelerate. But this proved extremely challenging (more on this in the Physics Engine page), so I decided to take the easy way out and used the Simple Harmonic Oscillator equation: <span class='eqn'>x(t) = A sin(&omega; t)</span>. It felt like cheating, but at the end of the day, I needed to have this ready for class the next day (this is Hollywood after all, and the show must go on!). <span style='font-size:13px'>(I'm not sure if the punctuation at the end of the previous sentence is correct)</span>
+			</p>
+			<p>
+				My main goal for this project was to show my students how different variables affected the behavior of the block (mass, spring constant, amplitude, etc.). I was able to do this through the console, by changing the values of the different variables before hitting play. Although this design was fairly handy in the classroom, my end goal for this project was to make the page more intuitive and user-friendly to the point where students and teachers could play around with the page without needing too many directions from me. 
+			</p>
+			<p>
+				On a final note, the Play and Pause buttons are fairly straightforward, but the Record Data button requires some explanation: pressing that button will advance the simple harmonic oscillator a full 10 seconds instantly, recording the block's position, velocity, and acceleration every 10 ms (for a total of 1000 measurements). The results are printed in the table below the animation, and they can easily be copy/pasted into Microsoft Excel to produce various graphs. I added this feature after a few days of demonstrations to the class.  
+			</p>
+			<p>
+				I have more to say about this page, but I don't think anybody is still reading at this point. 
+			</p>
 		</article>
 	</section>
 	
