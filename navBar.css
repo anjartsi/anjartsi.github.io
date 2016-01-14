@@ -113,3 +113,11 @@ nav a:active{
 	display:none;
 }
 
+#about a, #about a:visited {
+	color: blue;
+	text-decoration: none;
+}
+
+#about a:hover {
+	text-decoration: underline;
+}

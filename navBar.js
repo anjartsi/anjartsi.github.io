@@ -40,23 +40,26 @@ for (var i = 0; i < titles.length; i++) {
 	if(pageTitle == titles[i]) {
 		var hi = document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0].childNodes[i];
 		addClass(hi,'thisPage')
-		console.log(hi)
 	}
 }
 
 
 // Make the About this Page section expandable
-document.getElementById('about').addEventListener('click', function() {
-	// In case there are multiple <p> elements in it,
-	// Hide all the <p>'s inside the about section
-	var aboutContents = document.getElementById('aboutContents');
-	toggleClass(aboutContents,'hide');
+var about = document.getElementById('about');
+if(about) {
+	about.addEventListener('click', function() {
+		// In case there are multiple <p> elements in it,
+		// Hide all the <p>'s inside the about section
+		var aboutContents = document.getElementById('aboutContents');
+		toggleClass(aboutContents,'hide');
+		
+		// Change the plus/minus sign accordingly
+		if(hasClass(aboutContents,'hide')) {
+			document.getElementById('expand').innerHTML='[ &plus; ]';
+		}
+		else {
+			document.getElementById('expand').innerHTML='[ &minus; ]';	
+		}
+	})
 	
-	// Change the plus/minus sign accordingly
-	if(hasClass(aboutContents,'hide')) {
-		document.getElementById('expand').innerHTML='[ &plus; ]';
-	}
-	else {
-		document.getElementById('expand').innerHTML='[ &minus; ]';	
-	}
-})
+}

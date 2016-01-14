@@ -180,4 +180,4 @@ var buttonEventListeners = function() {
 }
 
 buttonEventListeners();
-toggleDragging();
+// toggleDragging();

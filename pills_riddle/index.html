@@ -16,7 +16,7 @@
 		<div id='riddleText'>
 			<h2>Riddle:</h2>
 			<p>Below are twelve pills. Eleven of them are identical, one of the pills is poison</p>
-			<p>The poisoned pill weighs slightly different than the other pills (heavier OR lighter)</p>
+			<p>The poisoned pill weighs slightly different than the other pills (<u>heavier</u> <i>or</i> <u>lighter</u>)</p>
 			<p>You have a scale that can be used only 3 times.</p>
 			<p>Figure out which one is the poisoned pill.</p>
 		</div>
@@ -42,7 +42,8 @@
 					</h3>
 					<div class='' id ='scale1'></div>
 						<button id='clearLeftButton'>Clear</button>
-				</div>
+				</div> <!-- scaleLeft -->
+
 				<div class='scale' id='betweenScaleGroups'></div>
 				<div class='scale' id='scaleRight'>
 					<h3>
@@ -50,44 +51,89 @@
 					</h3>
 					<div class='' id ='scale2'></div>
 						<button id='clearRightButton'>Clear</button>
-				</div>
+				</div> <!-- scaleRight-->
+				
 				<div class='clearBoth'></div>
+				
 				<div class='' id='buttonContainer'>
-					<button id='weighButton'>Weigh (&times 3)</button>
+					<button id='weighButton'>Weigh (&times; 3)</button>
 					<button id='clearScaleButton'>Clear All</button>
-				</div>
+				</div> <!--buttonContainer-->
+
 				<div class='scale feedback' id='scaleOneFeedback'></div>
 				<div class='scale feedback' id='scaleComparison'></div>
 				<div class='scale feedback' id='scaleTwoFeedback'></div>
+				
 				<div class='clearBoth'></div>
+				
 				<div class='scale disabled' id='answer'>
-					<div id='ansText'>Place Poisoned Pill Here: &#8680</div>
+					<div id='ansText'>Place Poisoned Pill Here: &#8680;</div>
 					<div id='answerPB'></div>
 					<div id='answerButtons'>
 						<button class='btn disabled' id='checkAnswerButton'>Check Answer</button>
 					</div>
-				</div>
+				</div> <!--answer-->
 				
 				<div class='clearBoth'></div>
 				<br>
+
 				<div class='controls' id='controlWindow'>
 				<button class='btn' id='resetButton'>Reset</button>
 					<button class='controlButton disableDragClick' id='dragButton'>Dragging Enabled</button>
 					<button class='controlButton disableDragClick' id='clickButton'>Clicking Enabled</button>
 					<div class='clearBoth'></div>
-				</div>
-			</div>
-		</div>
-	</div>
-		<div class='clearBoth'></div>
+				</div> <!---controlWindow-->
+			</div> <!--scaleContainer-->
+	<div class='clearBoth'></div>
+		</div> <!--actionWindow-->
+	<div class='instructions'>
+		<h3>Instructions</h3>
+		<ul>
+			<li>
+				To move a pill, you can:
+				<ul>
+					<li>Click on the pill, then click on the desired destination</li>
+					<li>Drag the pill directly to the desired destination</li>
+					<li>Click on multiple pills, and click on (or drag to) the desired destination</li>
+				</ul>
+			</li> <!-- First major bulletpoint with its own <ul> -->
+			<li>You can disable the clicking and/or the dragging features with their respective buttons (make sure to leave at least one of them enabled)</li>
+			<li>The two boxes labelled "Scale 1" and "Scale 2" represent the two plates on a balancing scale (like <a target='_blank' href="http://www.clipartbest.com/cliparts/aTe/ajq/aTeajqyT4.png">this</a> one). Put the pills in these boxes to weigh them</li>
+			<li>The two boxes labelled "Extra Space" are there for convenience, you use these however you like to help yourself organize the pills</li>
+			<li>When you use the scale 3 times, a new box will appear. This is where you place the pill you think is the poisoned one to find out the answer</li>
+			<li>
+				The buttons labelled "Clear" will move all the pills on their side of the scale to the "Extra Space" boxes
+				<ul><li>The "Clear All" button will clear both sides of the scale</li></ul>
+			</li>
 
-		<br><hr>
+			<li>The Reset button will completely reset the problem, randomizing which pill is poisoned, as well as the weight of the poisoned pill</li>
+			<li>Good Luck!</li>
+		</ul>
+	</div> <!-- instructions -->
+	</div> <!-- pageBody -->
 
-	<section id='about'>
+		<hr>
+
+	<section id='about' >
 		<div id='expand'>[ &plus; ]</div>
-		<h2>Update coming soon!</h2>
+		<h2>About This Page <a href="" name='abt'></a></h2>
 		<article id='aboutContents' class='hide'>
-			<p>This page is about:</p>
+			<p>
+				I first came across this riddle on Reddit, and spent a day or two contemplating a solution to the riddle, but to no avail. The closest I came to the solution was an algorithm that got me the right answer <i>most</i> of the time, but left me having to guess every so often, meaning my solution wasn't 100% fullproof. The difficulty of this riddle stems from the fact that you don't know whether the poisoned pill is heavier or lighter than the rest (most people wrongly assume that it's heavier). 
+			</p>
+			<p>
+				This bugged me way more than it should have; after all, the solution was one Google search away, but my pride refused to allow me to search for the solution - I had to figure this one out the old-school way, or else the riddle would win (and I'll be damned if I let a <i>riddle</i> get the better of me!) In order to distract myself from my own failures, I decided to create a digital version of the problem to aid me in my quest to defeat the evil riddle. And so I began working on this page. 
+			</p>
+			<p> 
+				What you see above is not the first version of this page (it's more like version 3.12). The first iteration did a good job of simulating the riddle (randomizing the poison pill and its weight), but it was just a pain to use (I dug up the old files, you can see it <a href="pills_riddle_old/pills_riddle_old.html">here</a>.) As you can see, the pills were very skinny and hard to click on, the two sides of the scale (orange and yellow) didn't look like they should be clicked on, and the results of the weighing were hard to read. Overall it was a pain to use, so I started over and made the newer version (let's call it 2.0)
+			</p>
+			<p>
+				Just when I thought I was done with this project (I still hadn't figured out the solution to the riddle, but the page looked really good), I came up with the idea of <i>dragging</i> the pills from place to place, and once the idea entered my head, merely clicking on the pills to and from different locations seemed extremely arduous. So I spent another two weeks implementing <i>that</i> feature, fixing bugs, and fixing the new bugs I created while removing the previous bugs. The final version of this page still has a few bugs in it, some of which I fixed while typing <i>this</i> out (hopefully I didn't make things worse!)
+			</p>
+			<p>
+				Long story short (well, I guess I'm making it way longer than it needed to be), I recruited a friend of mine (who happens to be an engineer), and we finally managed to find the perfect, fullproof, works-100%-of-the-time solution to this problem. I'll give you a hint: you need to think outside the box.
+			</p>
+
 		</article>
 	</section>
 	

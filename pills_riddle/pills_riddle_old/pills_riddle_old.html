@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../navBar.css">
+	<link rel="stylesheet" type="text/css" href="pills_riddle_old.css">
+	<title>Pills Riddle</title>
+</head>
+
+<body>
+	<div class='container' id='pageHeader'>
+		<h1>Pills Riddle</h1>
+		<nav>
+			<ul>
+				<li style='border-right:0px solid black'>
+					<a href="../index.html#abt">Back to the Present</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	
+	<hr>
+
+	<div class='container'id='pageBody'> 	
+		<div class='container columns' id='leftSide'>
+			<div class='container' id='group1Container'>
+				<button id='group1Button'>Group 1</button>
+				<br><br>
+			</div>
+		</div>	
+
+
+		<div class='container columns' id='middleSide'>
+			<div id='riddleText'>
+				<p>Below are twelve pills. Eleven of them are identical, one of the pills is poison</p>
+				<p>The poisoned pill weighs slightly different than the other pills (more or less)</p>
+				<p>You have a scale that can be used only 3 times.</p>
+				<p>Figure out which one is the poisoned pill.</p>
+			</div>
+			<div class='container' id='pillsContainer'></div>
+			<br><br>
+			<button id='weigh'>Weigh</button>
+			<p id='numScales'>You can use the scale 3 more times</p>
+			<div id='answerContainer'>
+				<input  id='answer' type='number'>
+				<br><br>
+				<button id='checkButton'>Check</button>
+				<br><br>
+				<div id='rightOrWrong'></div>
+			</div>
+		</div>	
+
+
+		<div class='container columns' id='rightSide'>
+			<div class='container' id='group2Container'>
+				<button id='group2Button'>Group 2</button>
+				<br><br>
+			</div>
+		</div>	
+		<br><br>
+		
+		<br>
+	</div>
+
+	<br>
+	<hr>
+	<div class='container' id='pageFooter'>
+		<h3>By Armen Ourfalian</h3>
+	</div>
+</body>
+
+<script type='text/javascript' src='jquery-1.11.1.js'></script>
+<script type="text/javascript" src="pills_riddle_old.js"></script>
+</html>

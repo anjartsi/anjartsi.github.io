@@ -113,49 +113,44 @@ var pillDragStart = function(e) {
 	}
 }
 
-pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('dragstart',pillDragStart);});
-pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('mouseover',pillHoverOn);});
-pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('mouseleave',pillHoverOff);});
-pillListeners.push(function(pillNum) {pillID(pillNum).addEventListener('mouseup',pillClick);});
+pillListeners.push(function(pillNum) {
+	pillID(pillNum).addEventListener('dragstart',pillDragStart);
+});
+pillListeners.push(function(pillNum) {
+	pillID(pillNum).addEventListener('mouseover',pillHoverOn);
+});
+pillListeners.push(function(pillNum) {
+	pillID(pillNum).addEventListener('mouseleave',pillHoverOff);
+});
+pillListeners.push(function(pillNum) {
+	pillID(pillNum).addEventListener('mousedown',pillClick);
+});
 
 var pbDragEnterListener = function(e) {
 	removeDuplicatesFromChosen(); 
 	if(dragging){
-		// var info = e.dataTransfer.getData('application/pill_number');
-		// Check to see if the element being dragEnter'ed is a pillBox
-		// Without this if statement, dragging a pill over another pill causes an error
 		var thisObj = e.currentTarget;
-		if(thisObj.id.search('pillBox_')!=-1){
-				e.preventDefault();
-				var toBox = pillBoxObject(e.currentTarget.id); // pillBox Object
-				var destination = pillBoxID(toBox.cont,toBox.num); //pillBox Element
-				if(toBox.cont!=pillBoxObject(origin).cont){
-					e.preventDefault();
-					if(!hasClass(destination,'pillBoxHighlight'))
-					addClass(destination,'pillBoxHighlight')}
+		// If the hovered object IS a pillBox
+		if(thisObj.id.search('pillBox_') != -1){
+			e.preventDefault();
+			} 
+			// Highlight the hovered pillBox
+			if(!hasClass(event.target,'pillBoxHighlight')) {
+				addClass(event.target,'pillBoxHighlight')		
 		}
-
-		// info = info.split(',');
-		var pillNum = parseInt(dragData[1]);
-		var origin = document.getElementById(dragData[0]);
 	}
 }
 
 
 var pbDragLeaveListener = function(e) {
 	if(dragging){
-		var toBox = pillBoxObject(e.currentTarget.id); // pillBox Object
-		var destination = pillBoxID(toBox.cont,toBox.num); //pillBox Element
-
-		// Sometimes a pillBox receives the pillBoxHighlight class more than once
 		do{
-			removeClass(destination,'pillBoxHighlight');
-		} while (hasClass(destination,'pillBoxHighlight'));
+				removeClass(event.target,'pillBoxHighlight');
+			} while (hasClass(event.target,'pillBoxHighlight'));
 	}
 }
 
 var pbDropListener = function(e) {
-	// e.preventDefault();
 	var info = e.dataTransfer.getData('application/pill_number');
 	info = info.split(',');
 	var pillNum = parseInt(dragData[1],10);
@@ -167,12 +162,18 @@ var pbDropListener = function(e) {
 	if(dragging){
 		if(toBox.cont!=pillBoxObject(origin).cont){
 			for(var i=0;i<chosenCount;i++){
-				movePill(chosenPills[0],destination);
+				movePill(chosenPills[0],e.target);
 				do{
-					removeClass(destination,'pillBoxHighlight');
-				} while (hasClass(destination,'pillBoxHighlight'));
+					removeClass(e.target,'pillBoxHighlight');
+				} while (hasClass(e.target,'pillBoxHighlight'));
 			}
 		}
+	}
+	var pbHigh = document.getElementsByClassName('pillBoxHighlight');
+	for(var i = 0; i < pbHigh.length; i++) {
+		do{
+					removeClass(pbHigh[i],'pillBoxHighlight');
+				} while (hasClass(pbHigh[i],'pillBoxHighlight'));
 	}
 }
 
