@@ -99,3 +99,7 @@ function toggleClass(el,cls) {
 	if(hasClass(el,cls)){removeClass(el,cls)}
 	else{addClass(el,cls)};
 }
+
+
+
+removeClass(document.getElementById('aboutContents'), 'hide');

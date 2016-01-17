@@ -31,7 +31,18 @@
 		<div id='expand'>[ &plus; ]</div>
 		<h2>About This Page:</h2>
 		<article id='aboutContents' class='hide'>
-			<p>Update coming soon!</p>
+			<p>
+				The inspiration for this page comes from <a href="https://framasphere.org/camo/ceca91ecbf2e6b5fa332bd5101ca261232ebcc9c/687474703a2f2f33362e6d656469612e74756d626c722e636f6d2f39623464646661656439383666386638616361386534656531386261663633362f74756d626c725f6e30687961666c39467331723163366a676f325f3530302e706e67">this</a> image I found on reddit many winters ago while I was in college. I spent <span class='strikethrough'>ten</span> forty-five minutes or so <span class='strikethrough'>casually glancing</span> intently staring at the letters, thinking I found the answer only to be foiled by the last letter (BONOBBO still counts doesn't it?). That's when I got to thinking, "There is NO way somebody made this one letter at a time." And I began thinking about creating one of these myself. 
+			</p>
+			<p>
+				Creating the array of letters was easy enough: simply make rows and columns, and fill them with letters; you can use the entire alphabet, or (to make things more interesting) just use the letters from the word(s) in the list. That was the easy part, but things get a little tricky when you think about about making sure there was a <i>solution</i> to the puzzle (after all, who wants to spend two hours staring at a word search only to realize the answers weren't in there?)
+			</p>
+			<p>
+				In order to ensure that the puzzle would have at least one solution, the program (cheats a little bit, and) keeps track of all the instances the <i>first</i> letter of each word appeared in the crossword (so all the A's, M's and T's in this example). Later, the program looks at those letters (and the letters around them) to search for a solution. This idea was inspired by my own strategy when solving a crossword, except this happens 30,000 times faster. If no solution is found for a particular word, the program inserts a solution randomly somewhere in the puzzle (with a random direction as well), and then checks for all the solutions again (in case another solution got overwritten in the process).
+			</p>
+			<p>
+				There are still a few bugs in the code that powers this page, but once those are fixed I will release different word searches.
+			</p>
 		</article>
 	</section>
 	<hr>

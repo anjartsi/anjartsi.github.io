@@ -177,12 +177,14 @@ var removeDuplicatesFromFirstChar = function() {
 /*******************************
 Looks through each element in firstChar to see if it forms the word in the input
 Returns the number of solutions found
+If locationBool is true, instead it returns an array of letters that are the solution
 *******************************/
 var searchForSolutions = function(wordToMatch, locationBool) {
   wordToMatch = wordToMatch.toUpperCase();
   var locations = [];
   var countMatches = 0;
   var first = wordToMatch[0];
+
   // For each element in firstChar
   for(var i = 0, l = firstChar.length; i < l; i++) {
     // If the first letter of this word is found in firstChar
@@ -193,13 +195,17 @@ var searchForSolutions = function(wordToMatch, locationBool) {
         // and match it with the remaining parts of wordToMatch
         if(lookAtNode(firstChar[i], wordToMatch.substring(1), j)) {
           countMatches++;
-          if(locationBool) {locations.push([firstChar[i].pos[0],firstChar[i].pos[1]]);}
+          if(locationBool) {
+            locations.push([firstChar[i].pos[0],firstChar[i].pos[1]]);
+          }
         }
       }
     }
 
   }
-  if(locationBool) {return locations}
+  if(locationBool) {
+    return locations;
+  }
   else {
     return countMatches;
   }
