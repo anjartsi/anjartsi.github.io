@@ -1,0 +1,48 @@
+nav *, footer{
+	display: none;
+}
+body {
+	position: relative;
+	top: -0.5in;
+	color: black;
+	font-size: 16px;
+	max-width: 9.75in;
+	margin-left: 1in;
+	overflow: hidden;
+}
+
+#career {
+	width: 98%;
+	text-align: center;
+}
+
+.category {
+	text-align: left;
+	width: 4in;
+	vertical-align: top;
+	margin: 10px;
+	padding: 5px;
+}
+
+.category h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+
+#work {
+	min-height: 6in;
+}
+
+.job {
+}
+
+.job h3 {
+	width: 100%;
+	margin-bottom: 0px;
+}
+
+.job h4{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}

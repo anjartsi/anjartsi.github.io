@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../navBar.css">
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Armen's Wordsearch</title>
 </head>
-<body>
+<body class="color3">
+	
+	<nav class="color5">
+		<ul id="navBar"></ul>
+	</nav>
+	<div id="buffer"></div>
 	<header>
 		<h1>Word Search</h1>
 	</header>
-	
-	<nav></nav>
 	
 	<div class='container' id='pageBody'>
 		
@@ -28,11 +31,11 @@
 	<br> <hr>
 
 	<section id='about'>
-		<div id='expand'>[ &plus; ]</div>
-		<h2>About This Page:</h2>
-		<article id='aboutContents' class='hide'>
+		<div id='expand' class="collapse-pm">[ &plus; ]</div>
+		<h2 class="collapse-clickable">About This Page:</h2>
+		<article id='aboutContents' class='collapse-collapsable hide'>
 			<p>
-				The inspiration for this page comes from <a href="https://framasphere.org/camo/ceca91ecbf2e6b5fa332bd5101ca261232ebcc9c/687474703a2f2f33362e6d656469612e74756d626c722e636f6d2f39623464646661656439383666386638616361386534656531386261663633362f74756d626c725f6e30687961666c39467331723163366a676f325f3530302e706e67">this</a> image I found on reddit many winters ago while I was in college. I spent <span class='strikethrough'>ten</span> forty-five minutes or so <span class='strikethrough'>casually glancing</span> intently staring at the letters, thinking I found the answer only to be foiled by the last letter (BONOBBO still counts doesn't it?). That's when I got to thinking, "There is NO way somebody made this one letter at a time." And I began thinking about creating one of these myself. 
+				The inspiration for this page comes from <a href="https://framasphere.org/camo/ceca91ecbf2e6b5fa332bd5101ca261232ebcc9c/687474703a2f2f33362e6d656469612e74756d626c722e636f6d2f39623464646661656439383666386638616361386534656531386261663633362f74756d626c725f6e30687961666c39467331723163366a676f325f3530302e706e67" target="_blank">this</a> image I found on reddit many winters ago while I was in college. I spent <span class='strikethrough'>ten</span> forty-five minutes or so <span class='strikethrough'>casually glancing</span> intently staring at the letters, thinking I found the answer only to be foiled by the last letter (BONOBBO still counts doesn't it?). That's when I got to thinking, "There is NO way somebody made this one letter at a time." And I began thinking about creating one of these myself. 
 			</p>
 			<p>
 				Creating the array of letters was easy enough: simply make rows and columns, and fill them with letters; you can use the entire alphabet, or (to make things more interesting) just use the letters from the word(s) in the list. That was the easy part, but things get a little tricky when you think about about making sure there was a <i>solution</i> to the puzzle (after all, who wants to spend two hours staring at a word search only to realize the answers weren't in there?)

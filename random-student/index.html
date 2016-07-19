@@ -3,15 +3,19 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">	
-	<link rel="stylesheet" type="text/css" href="../navBar.css">
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">
 	<title>Random Student Picker</title>
 </head>
 
-<body>
+<body class="color3">
+	
+	<nav class="color5">
+		<ul id="navBar"></ul>
+	</nav>
+	<div id="buffer"></div>
 	<header class='container' id='pageHeader'>
 		<h1>Random Student Picker</h1>
 	</header>
-	<nav></nav>
 
 	<div class='container'id='pageBody'>	
 		<div id='buttonContainer'>
@@ -37,9 +41,9 @@
 	</div>
 	<hr>
 	<section id='about'>
-		<div id='expand'>[ &plus; ]</div>
-		<h2>About This Page:</h2>
-		<article id='aboutContents' class='hide'>
+		<div class="collapse-pm"id='expand'>[ &plus; ]</div>
+		<h2 class="collapse-clickable">About This Page:</h2>
+		<article id='aboutContents' class='hide collapse-collapsable'>
 			<p>
 				I made this page when I was a High school teacher. I never liked calling on students because I would always choose the good students who knew the answer to any question I ever asked them. I was always self-conscious of appearing to "pick on" the lazy kids, so I decided the only fair thing to do would be to create utter chaos (thank you Harvey Dent). 
 			</p>

@@ -2,15 +2,17 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="../navBar.css">
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">
 	<title>RGB</title>
 </head>
-<body>
-	<header>
+<body class="color3">
+	
+	<nav class="color5">
+		<ul id="navBar"></ul>
+	</nav>
+	<div id="buffer"></div>	<header>
 		<h1>RGB Color Chooser</h1>
 	</header>
-	<nav></nav>
-
 	<div class='container' id='pageBody'>
 		<div class='container' id='savedColorsContainer'>
 			<div id='savedColorsScrollCont'></div>
@@ -85,9 +87,9 @@
 	<hr>
 
 	<section id='about'>
-		<div id='expand'>[ &plus; ]</div>
-		<h2>About This Page:</h2>
-		<article id='aboutContents' class='hide'>
+		<div  class="collapse-pm" id='expand'>[ &plus; ]</div>
+		<h2 class="collapse-clickable">About This Page:</h2>
+		<article id='aboutContents' class='hide collapse-collapsable'>
 			<p>
 				I've seen a few versions of "HTML Color Picker" online and I always thought I could do better. My initial idea consisted only of the first section in the page (with the 3 sliders), and it ended up taking much less time than I thought it would (I have HTML canvas to thank for that), and didn't look nearly as cool as I thought (again, using 'cool' pretty liberally here). 
 			</p>

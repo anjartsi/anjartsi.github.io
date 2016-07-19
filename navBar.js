@@ -1,64 +1,63 @@
-var pageTitle = document.getElementsByTagName('title')[0].innerHTML;
-// home page
-if(pageTitle == 'Armen Ourfalian') {
-	document.getElementsByTagName('nav')[0].innerHTML+= "<ul>"
-		+ 		"<li><a href='index.html'>Home</a></li>"
-		+ 		"<li><a href='simple_harmonic/index.html'>Simple Harmonic Oscillator</a></li>"
-		+ 		"<li><a href='random_student/index.html'>Random Student</a></li>"
-		+ 		"<li><a href='pills_riddle/index.html'>Pills Riddle</a></li>"
-		+ 		"<li><a href='wordsearch/index.html'>Word Search</a></li>"
-		+ 		"<li><a href='rgb/index.html'>RGB Colors</a></li>"
-		+ 		"<li><a href='physics_engine/index.html'>Physics Engine</a></li>"
-		+ 	"</ul>";
+/*************************************************************************
+									NavBar
+**************************************************************************/
+
+var nav = document.getElementById("navBar");
+var pageName = document.getElementById("pageName");
+
+nav.innerHTML += createLink("Home", "../home/index.html");
+nav.innerHTML += createLink("Resume", "../home/index.html#resume");
+nav.innerHTML += createLink("Projects", "../home/index.html#projects");
+nav.innerHTML += createLink("Blog", "../resume/index.html");
+
+// returns a string of the form "<li><a href='url'>name [optional]</a></li>"
+function createLink(name, url, optional) {
+	var link = "<li "  + "><a href='" + url + "'>";
+	link += name;
+	if(optional != null)
+		link += optional; 
+	link += "</a></li>";
+	return link;
 }
 
-// Every other page
-else {
-	document.getElementsByTagName('nav')[0].innerHTML+= "<ul>"
-		+ 		"<li><a href='../index.html'>Home</a></li>"
-		+ 		"<li><a href='../simple_harmonic/index.html'>Simple Harmonic Oscillator</a></li>"
-		+ 		"<li><a href='../random_student/index.html'>Random Student</a></li>"
-		+ 		"<li><a href='../pills_riddle/index.html'>Pills Riddle</a></li>"
-		+ 		"<li><a href='../wordsearch/index.html'>Word Search</a></li>"
-		+ 		"<li><a href='../rgb/index.html'>RGB Colors</a></li>"
-		+ 		"<li><a href='../physics_engine/index.html'>Physics Engine</a></li>"
-		+ 	"</ul>"
+/*************************************************************************
+							Collapsable
+To make elements collapsable: 
+	1) give the element class="collapse-collapsable"
+	2) make another element (outside of this one) with class="collapse-clickable"
+	3) OPTIONAL create a third element with class="collapse-pm" with a plus sign
+			(or minus depending on the initial state) to show the state of the 
+			collapsable object (also acts as a clickable and can replace #2)
+IMPORTANT: Each collapsable element must have exactly ONE pm and clickable element to go with it
+**************************************************************************/
+var pm = document.getElementsByClassName("collapse-pm");
+var clickable = document.getElementsByClassName("collapse-clickable");
+var collapsable = document.getElementsByClassName("collapse-collapsable");
+/** 
+  adds an event listener to make an element collapsable on click
+  first parameter is the element that is the target of the click
+    this element should be bigger (or outside of) the collapsing element
+  second parameter is the element that will expand/collapse
+  third parameter (optional) is an element that holds a + or - to show the state
+**/
+function makeCollapsable(elemToClick, elemToHide, plusminus) {
+  if(elemToClick) {
+    elemToClick.style.cursor = "pointer";
+    elemToClick.addEventListener('click', function() {
+      toggleClass(elemToHide,'hide'); 
+      // Change the plus/minus sign accordingly
+      if(plusminus) {
+
+        if(!hasClass(elemToHide,'hide'))
+          plusminus.innerHTML='[ &minus; ]';  
+        else
+          plusminus.innerHTML='[ &plus; ]';
+      } // end if(plusminus)
+    })
+  }
 }
 
-// Make the link to the current page a different color
-var titles = [
-	"Armen Ourfalian",
-	"Simple Harmonic Oscillator",
-	"Random Student Picker",
-	"Pills Riddle",
-	"Armen's Wordsearch",
-	"RGB",
-	"Physics Engine"
-]
-
-for (var i = 0; i < titles.length; i++) {
-	if(pageTitle == titles[i]) {
-		var hi = document.getElementsByTagName('nav')[0].getElementsByTagName('ul')[0].childNodes[i];
-		addClass(hi,'thisPage')
-	}
-}
-
-
-// Make the About this Page section expandable
-var about = document.getElementById('about');
-if(about) {
-	about.addEventListener('click', function() {
-		// In case there are multiple <p> elements in it,
-		// Hide all the <p>'s inside the about section
-		var aboutContents = document.getElementById('aboutContents');
-		toggleClass(aboutContents,'hide');
-		
-		// Change the plus/minus sign accordingly
-		if(hasClass(aboutContents,'hide')) {
-			document.getElementById('expand').innerHTML='[ &plus; ]';
-		}
-		else {
-			document.getElementById('expand').innerHTML='[ &minus; ]';	
-		}
-	})
+for (var i = 0; i < pm.length; i++) {
+	makeCollapsable(clickable[i], collapsable[i], pm[i]);
+	makeCollapsable(pm[i], collapsable[i], pm[i]);
 }

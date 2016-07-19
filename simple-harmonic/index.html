@@ -2,16 +2,19 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">	
-	<link rel="stylesheet" type="text/css" href="../navBar.css">
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">
 	<title>Simple Harmonic Oscillator</title>
 </head>
 
-<body>
+<body class="color3">
+	
+	<nav class="color5">
+		<ul id="navBar"></ul>
+	</nav>
+	<div id="buffer"></div>
 	<header>
 		<h1>Simple Harmonic Oscillator</h1>
 	</header>
-	
-	<nav></nav>
 	
 	<div class='container'id='pageBody'>	
 		<div class='container' id='initialValues'>
@@ -64,9 +67,9 @@
 	</div>
 
 	<section id='about'>
-		<div id='expand'>[ &plus; ]</div>
-		<h2>About This Page:</h2>
-		<article id='aboutContents' class='hide'>
+		<div class='collapse-pm'>[ &plus; ]</div>
+		<h2 class='collapse-clickable'>About This Page:</h2>
+		<article id='aboutContents' class='collapse-collapsable hide'>
 			<p>
 				This was one of my earliest projects ever. I had <i>just</i> learned how to manipulate HTML elements with javascript (jquery to be exact). I made this page more out of necessity than anything else; I needed to show my students how a Simple Harmonic Oscillator works. To make a long story short: this idea was insanely successful, and I used this page in class for weeks.
 			</p>

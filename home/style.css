@@ -1,0 +1,93 @@
+a {
+	color: white;
+}
+
+.bar {
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#me {
+	display: block;
+	float: left;
+	margin: 0px 10px 10px 0px;
+    width: auto;
+}
+
+
+/* Allows for navBar links to scroll correctly to a section on the page*/
+.navLink {
+	position: relative;
+	top: -60px;
+	margin-top: 60px;
+	z-index: 0;
+}
+
+
+/* LINKS START*/
+#links ul {
+	text-align: center;
+}
+#links ul li {
+	text-align: center;
+	display: inline-block;
+	margin: auto 2%;
+	width: 20%;
+}
+
+#links img {
+	height: 75px;
+}
+
+#links a {
+	display: block;
+}
+
+#links p {
+	margin-top: 5px;
+}
+
+/* LINKS END*/
+
+/* RESUME START*/
+
+.category {
+	text-align: left;
+	display: inline-block;;
+	width: 45%;
+	vertical-align: top;
+	margin: 0px 2% 0px 2%;
+	padding: 5px;
+}
+
+.category h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+.job h3 {
+	width: 100%;
+	margin-bottom: 0px;
+}
+
+.job h4{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+/* RESUME END*/
+
+/* PROJECTS START */
+#projectsCont {
+	text-align: center;
+}
+
+.project {
+	display: inline-block;	
+	width: 30%;
+	height: 10em;
+	margin: 10px 1%;
+	outline: 1px solid white;
+}
+/* PROJECTS END */
