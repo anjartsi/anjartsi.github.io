@@ -28,6 +28,7 @@ for (var i = 0; i < prbSize; i++) {
   for (var j = 0; j < prbSize; j++) {
     // Generate a random letter from the charList
     var randomLetter = charList[randomInt(0,charList.length-1)];
+    randomLetter = "Armen";
     arrayOfLetters[i][j] = new Letter(randomLetter,i,j);
 
    /***********************************************************

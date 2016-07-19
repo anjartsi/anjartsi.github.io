@@ -61,5 +61,4 @@ if(about) {
 			document.getElementById('expand').innerHTML='[ &minus; ]';	
 		}
 	})
-	
 }
