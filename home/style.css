@@ -86,7 +86,7 @@ a {
 .project {
 	display: inline-block;	
 	width: 30%;
-	height: 10em;
+	height: 200px;
 	margin: 10px 1%;
 	outline: 1px solid white;
 }
