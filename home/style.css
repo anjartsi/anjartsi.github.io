@@ -86,8 +86,12 @@ a {
 .project {
 	display: inline-block;	
 	width: 30%;
-	height: 200px;
 	margin: 10px 1%;
 	outline: 1px solid white;
+}
+
+.project img {
+	width: 100%;
+	height: 200px;
 }
 /* PROJECTS END */
