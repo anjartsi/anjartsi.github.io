@@ -85,7 +85,7 @@ a {
 
 .project {
 	display: inline-block;	
-	width: 30%;
+	width: 350px;
 	margin: 10px 1%;
 	outline: 1px solid white;
 }
@@ -93,5 +93,23 @@ a {
 .project img {
 	width: 100%;
 	height: 200px;
+}
+
+.project-description {
+	height: 220px;
+	width: 350px;
+	background-color: black;
+	opacity: 0;
+	position: absolute;
+	z-index: 3;
+}
+
+.project-description:hover {
+	opacity: 0.92;
+}
+
+.project-description h2 {
+	position: relative;
+	margin: 10px;
 }
 /* PROJECTS END */

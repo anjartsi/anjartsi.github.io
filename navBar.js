@@ -61,3 +61,14 @@ for (var i = 0; i < pm.length; i++) {
 	makeCollapsable(clickable[i], collapsable[i], pm[i]);
 	makeCollapsable(pm[i], collapsable[i], pm[i]);
 }
+
+
+/*************************************************************************
+                  Vertical Align: Center
+Vertically centers an element based on its height and its parent element height
+**************************************************************************/
+function verticalCenter(elem) {
+  var elemHeight = elem.clientHeight;
+  var containerHeight = elem.parentElement.clientHeight;
+  elem.style.marginTop = ( containerHeight - elemHeight ) / 2 + "px";
+}
