@@ -6,7 +6,6 @@ var nav = document.getElementById("navBar");
 var pageName = document.getElementById("pageName");
 
 nav.innerHTML += createLink("Home", "../home/index.html");
-nav.innerHTML += createLink("Resume", "../home/index.html#resume");
 nav.innerHTML += createLink("Projects", "../home/index.html#projects");
 //nav.innerHTML += createLink("Blog", "../resume/index.html");
 
