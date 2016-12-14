@@ -1,0 +1,280 @@
+/* COLORS START*/
+.color1 {background-color: #000000;}
+.color2 {background-color: #851331;}
+.color3 {background-color: #161925;}
+.color4 {background-color: #232227;}
+.color5 {background-color: #1B1922;}
+
+/* COLORS END */
+
+#chapterHeader {
+	width: 50%;
+	position: relative;
+	left: 25%;
+}
+
+
+
+html
+{
+	color: #FFFFFF;
+	background-image: url("galaxy2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+   	width: 1300px;
+	/*height: 1300px;*/
+	margin: auto;
+	font-family: Sans-Serif, Arial, Helvetica, "Times New Roman";
+	font-size: 1em;
+	overflow: scroll;
+}
+/* semitransparent filter between background-image and the page */
+#shade {
+position: fixed;
+width: 1284px;
+height: 100%;
+z-index: -2;
+background-color: black;
+opacity: 0.85;
+}
+
+img {
+	/* need images to appear behind navBar items */
+	z-index: -1;
+}
+
+/* canvases are white by default*/
+canvas 
+{
+	background-color: white;
+}
+
+/*Body Content*/
+#content
+{
+	width: 1264px;
+	padding: 10px;
+	
+}
+
+ul li {
+	margin-bottom: 2px;
+}
+
+#logoLeft
+{
+	float: left;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+#logoRight
+{
+	float: right;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+/*********************************************** 
+The nav bar
+************************************************/
+#navBar 
+{
+	position: sticky;
+	width: 100%;
+	height: 60px;
+	font-size: 25px;
+	background-color: #851331;
+	z-index: 9999;
+}
+
+.fixed
+{
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.nav-placeholder
+{
+	margin: auto;
+}
+
+nav ul 
+{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li
+{
+	display: inline-block;
+}
+
+
+nav li a, .dropbtn 
+{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*Selected Chapter*/
+#selected
+{
+	background-color: #68093C;
+}
+
+#home:hover, .dropdown:hover .dropbtn 
+{
+    background-color: #68093C;
+}
+
+.dropdown 
+{
+    display: inline-block;
+}
+
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover 
+{
+	background-color: #68093C;
+	color: white;
+}
+
+.dropdown:hover .dropdown-content 
+{
+    display: block;
+}
+
+/* Used to buffer top of page from under the navBar*/
+#buffer1
+{
+	height: 0px;
+	width: 1000px;
+}
+
+#textBuffer
+{
+	width: 10px;
+}
+
+#buffer2 
+{
+	height: 0px;
+	width: 1000px;
+}
+
+/* end nav bar */
+
+/**************************************************
+Sample Problem Styles
+***************************************************/
+.probNum
+{
+	color: #B84664;
+	font-weight: bold;
+}
+
+.hintBtn
+{
+	border-radius: 8px;
+	width: 100px;
+	height: 25px;
+	margin: 10px
+	font-size: 25px;
+}
+
+.probBtn{
+	border-radius: 8px;
+	width: 100px;
+	height: 25px;
+	margin: 10px
+	font-size: 25px;
+}
+
+.problemCont {
+	background-color: rgba(100,100,100, 0.2);
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.hint {
+	color: #B84664;
+}
+
+.correct {
+	color: #1aff1a;
+}
+
+.incorrect {
+	color: #ff3333;
+}
+
+/**************************************************
+Helper classes
+***************************************************/
+
+.hide 
+{
+	display: none;
+}
+
+/* floats and clears */
+.floatLeft 
+{
+	float: left;
+}
+
+.floatRight 
+{
+	float:right;
+}
+
+.clearLeft 
+{
+	clear: left;
+}
+
+.clearBoth 
+{
+	clear:both;
+}
+
+
+/* +/- button for collapsable elements */
+.collapse-pm 
+{
+	-webkit-user-select: none;	
+	font-weight: bold;
+	display: inline;
+	float:right;
+	width:50px;
+	text-align: right;
+	vertical-align: middle;
+}

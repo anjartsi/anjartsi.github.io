@@ -1,0 +1,31 @@
+html{
+	-webkit-user-select:none;
+	background-color: #221188;
+	color: white;
+	text-align: center;
+}
+
+#actionWindow{
+	text-align: center;
+}
+
+canvas{
+	background-color: white;
+	border: 1px solid black;
+	display: inline;
+}
+
+#dataCont{
+	text-align: center;
+	height: 400px;
+	overflow: auto;
+}
+
+button {
+	width: 250px;
+	height: 75px;
+	border-radius: 10px;
+	margin: 10px;
+	font-size: 25px;
+	
+}
