@@ -102,7 +102,8 @@ class Hangman {
 		$("#defeat").removeClass("hide");
 		timesDied++;
 		$("#timesDied").html(timesDied);
-		$("#showAnswer").text(this.word.toUpperCase())
+		$("#showAnswer").text(this.word.toUpperCase());
+
 	}
 
 
@@ -261,6 +262,11 @@ class Hangman {
 		this.ctx.strokeStyle = "white";
 		this.ctx.fillStyle = "white";
 		this.ctx.lineWidth = 3;
+		if(this.guessesLeft == 0) {
+
+			this.ctx.fillStyle = "#d00d2d";
+			this.ctx.strokeStyle = "#d00d2d";
+		}
 		this.drawBody(this.maxGuesses - this.guessesLeft);
 		
 		this.ctx.restore();

@@ -12,9 +12,11 @@
 	<!-- End Copied from Metaphor Documentation -->
 	<link rel="stylesheet" type="text/css" href="style.css">  
 </head>
-<body>
+
+<body class="bg--black">
+	
 	<!-- NavBar -->
-	<nav class="primary-nav--black">
+	<nav class="primary-nav">
 		<div class="container">
 			<!-- Mobile-only -->
 			<div class="primary-nav__mobile">
@@ -33,7 +35,7 @@
 
 	<!-- Main Body -->
 	<div class="container">
-		<!-- Keyboard Alert -->
+		<!-- Alert: You can use the keyboard -->
 		<div class="row">
 			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
 			<div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 alert type--center">
@@ -42,45 +44,7 @@
 			</div>
 		</div>
 
-		<!-- Drawing -->
-		<div class="row">
-			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
-			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
-				<canvas id="can">Use Google Chrome</canvas>
-			</div>
-		</div>
-		<!-- Game Information -->
-		<div class="row">
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-				<div class="panel bg--black type--light-gray">
-					<div  class="panel__content type--center">
-						Guesses: <span id="guessesLeft"></span>
-						<br/>
-						<br/>
-					</div>
-				</div>
-			</div>
-
-			<!-- W_RD goes here -->
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-				<div class="panel bg--black type--light-gray">
-					<div class="panel__content type--center">
-						<h2 id="answerGuessed" class="h2"></h2>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-				<div class="panel bg--black type--light-gray">
-					<div class="panel__content type--center">
-						Died: <span id="timesDied" ></span>
-						<br/>
-						Won: <span id="timesWon" ></span>
-					</div>
-				</div>
-			</div>
-		</div> <!-- End Game Information -->
-		
-		<!-- Alert: Start New Game ... Keep Trying -->
+		<!-- Alert: Start New Game - Keep Trying -->
 		<div id="keepTryingMsg" class="row hide">
 			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
 			<div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 alert alert--success type--center">
@@ -89,7 +53,7 @@
 			</div>
 		</div>
 
-		<!-- Alert: Start New Game ... New Game -->
+		<!-- Alert: Start New Game - New Game -->
 		<div id="newGameMsg" class="row hide">
 			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
 			<div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 alert alert--warning type--center">
@@ -98,13 +62,50 @@
 			</div>
 		</div>
 
+		<!-- Drawing -->
+		<div class="row">
+			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
+			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
+				<canvas id="can">HTML Canvas cannot display in your browser.</canvas>
+			</div>
+		</div>
+
+		<!-- Game Information -->
+		<div class="container">
+			<div class="row">
+				
+				<!-- Remaining Guesses -->
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+					<h3 class="h3 type--light-gray type--center">
+						Tries <br/> Left:<br/> <span id="guessesLeft"></span>
+					</h3>
+				</div>
+
+				<!-- W_RD goes here -->
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+					<h2 id="answerGuessed" class="h2 type--light-gray type--center"></h2>
+				</div>
+
+				<!-- Times Died and Times Won -->
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+					<h3 class="type--light-gray type--center">
+						Died: <span id="timesDied" ></span>
+					</h3>
+					<h3 class="h3 type--light-gray type--center">
+						Won: <span id="timesWon" ></span>
+					</h3>
+				</div>
+			</div>
+		</div>
+		<!-- End Game Information -->
+		
 		<!-- Keyboard -->
 		<div id="keyboard" class="row">
 			<div class="col-xs-1 col-sm-2 col-lg-1 col-xl-1"></div><!-- Offset -->
 			<!-- Container of all the keyboard rows -->
 			<div class="container col-xs-10 col-sm-8 col-md-12 col-lg-10 col-xl-10">
 				<div class="row keyboardRow"></div>
-				<div class="row keyboardRow bg--cream">
+				<div class="row keyboardRow">
 					<!-- Empty divs help keep the keyboard buttons equal-sized -->
 					<div></div>
 				</div>
@@ -116,7 +117,7 @@
 				</div>
 
 				<!-- This last keyboardRow contains OTHER buttons -->
-				<div class="row keyboardRow bg--cream">
+				<div class="row keyboardRow">
 					<button id="qwertyBtn" class="btn btn-default">QWERTY</button>
 					<button id="alphaBtn" class="btn btn-default">ABCDEF</button>
 					<button id="newGameBtn" class="btn btn-danger" data-modal="#newGameModal">
