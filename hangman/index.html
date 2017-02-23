@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="en">
+<head>
+	<!-- Copied from Metaphor Documentation -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hangman by Armen</title>
+	<meta name="description" content="">
+	<script>try{Typekit.load();}catch(e){}</script>	
+	<link rel="stylesheet" href="https://cdn.metalab.csun.edu/metaphor/css/metaphor.css">
+	<!-- End Copied from Metaphor Documentation -->
+	<link rel="stylesheet" type="text/css" href="style.css">  
+</head>
+<body>
+	<!-- NavBar -->
+	<nav class="primary-nav--black">
+		<div class="container">
+			<!-- Mobile-only -->
+			<div class="primary-nav__mobile">
+				<div class="primary-nav__btn">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<div class="primary-nav__brand">	
+					<span class="sr-only">Shush, I'm hiding</span>
+				</div>
+			</div> <!-- End nav__mobile -->
+			<ul class="primary-nav__links"></ul>
+		</div>		
+	</nav>
+
+	<!-- Main Body -->
+	<div class="container">
+		<!-- Keyboard Alert -->
+		<div class="row">
+			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
+			<div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 alert type--center">
+				<strong>Pro Tip:</strong> You can use the keyboard too!
+				<a href="#" class="alert__close" data-alert-close>&times;</a>
+			</div>
+		</div>
+
+		<!-- Drawing -->
+		<div class="row">
+			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
+			<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
+				<canvas id="can">Use Google Chrome</canvas>
+			</div>
+		</div>
+		<!-- Game Information -->
+		<div class="row">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+				<div class="panel bg--black type--light-gray">
+					<div  class="panel__content type--center">
+						Guesses: <span id="guessesLeft"></span>
+						<br/>
+						<br/>
+					</div>
+				</div>
+			</div>
+
+			<!-- W_RD goes here -->
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+				<div class="panel bg--black type--light-gray">
+					<div class="panel__content type--center">
+						<h2 id="answerGuessed" class="h2"></h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+				<div class="panel bg--black type--light-gray">
+					<div class="panel__content type--center">
+						Died: <span id="timesDied" ></span>
+						<br/>
+						Won: <span id="timesWon" ></span>
+					</div>
+				</div>
+			</div>
+		</div> <!-- End Game Information -->
+		
+		<!-- Alert: Start New Game ... Keep Trying -->
+		<div id="keepTryingMsg" class="row hide">
+			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
+			<div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 alert alert--success type--center">
+				<strong>Nice:</strong> You can still win this!
+				<a href="#" class="alert__close" data-alert-close>&times;</a>
+			</div>
+		</div>
+
+		<!-- Alert: Start New Game ... New Game -->
+		<div id="newGameMsg" class="row hide">
+			<div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div> <!-- Offset -->
+			<div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 alert alert--warning type--center">
+				<strong>New Game:</strong> What makes you think you can win this one?
+				<a href="#" class="alert__close" data-alert-close>&times;</a>
+			</div>
+		</div>
+
+		<!-- Keyboard -->
+		<div id="keyboard" class="row">
+			<div class="col-xs-1 col-sm-2 col-lg-1 col-xl-1"></div><!-- Offset -->
+			<!-- Container of all the keyboard rows -->
+			<div class="container col-xs-10 col-sm-8 col-md-12 col-lg-10 col-xl-10">
+				<div class="row keyboardRow"></div>
+				<div class="row keyboardRow bg--cream">
+					<!-- Empty divs help keep the keyboard buttons equal-sized -->
+					<div></div>
+				</div>
+				<div class="row keyboardRow">	
+					<!-- Empty divs help keep the keyboard buttons equal-sized -->
+					<!-- Different than the offsets... but kinda similar -->
+					<div></div>
+					<div></div>
+				</div>
+
+				<!-- This last keyboardRow contains OTHER buttons -->
+				<div class="row keyboardRow bg--cream">
+					<button id="qwertyBtn" class="btn btn-default">QWERTY</button>
+					<button id="alphaBtn" class="btn btn-default">ABCDEF</button>
+					<button id="newGameBtn" class="btn btn-danger" data-modal="#newGameModal">
+						New Game
+					</button>
+				</div>
+			</div>
+		</div> <!-- End Keyboard-->
+		<!-- Victory Message -->
+		<div id="victory" class="row hide">
+			<div class="alert alert--success type--center">
+				<h2>Congratulations! You Win!</h2>
+				<button class="btn btn-default startNewGame">Start New Game</button>
+			</div>
+		</div>
+		<!-- Defeat Message -->
+		<div id="defeat" class="row hide">
+			<div class="alert alert--danger type--center">
+				<h2>You Lose! The word was: <span id="showAnswer"></span></h2>
+				<button class="btn btn-default startNewGame">Start New Game</button>
+			</div>
+		</div>
+
+		<!-- Modal for starting a new game -->
+		<div id="newGameModal" class="modal__outer">
+			<div class="modal">
+				<div class="modal__header">
+					<strong>Start New Game?</strong>
+				</div>
+				<div class="modal__content">
+					Are you sure you want to forfeit this game and start a new one? 
+					<br/>
+					You will NEVER find out what the word was.
+				</div>
+				<div class="modal__footer">
+					<div class="pull-right">
+						<button id="keepTryingBtn" class="btn btn-success" data-modal-close="#newGameModal">
+							No, I never give up!
+						</button>
+						<button id="startNewGameBtn" class="btn btn-warning startNewGame" data-modal-close="#newGameModal">
+							Yes, I'm a coward
+						</button>
+					    
+					    <div class="modal__close" data-modal-close="#test">
+					    	<i class="fa fa-times" aria-hidden="true"></i>
+				    	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- End Main Body -->
+
+<script src="https://cdn.metalab.csun.edu/metaphor/js/metaphor.js"></script>
+<script type="text/javascript" src="top-secret.js"></script>
+<script type="text/javascript" src="hangman.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
+
+<!--
+[ ] Navbar 
+	[ ] Brand
+	[X] Start New Game
+	[ ] Give Up
+
+[X] Canvas
+	[X] Draw Empty Gallows 
+	[X] Make path for each body part
+
+[X] Keyboard
+	[X] 26 buttons (A - Z)
+		[X] Button Event Listener
+	[X] Keyboard Layout (QWERTY / Alphabetical / Random)
+		[-] Radio buttons/List?
+		[X] Rows/Columns?
+	[X] Key button listener
+
+[X] Game
+	[X] List of Words (link to different file)
+	[X] Handle Keypress
+		[X] Hit (show correct letters)
+		[X] Miss (draw next body part)
+		[X] Check if game is over
+	[X] Game End Screen
+		[X] Win Message
+		[X] Lose Message
+		[X] Enable New Game Button
+		[X] Keep Score
+-->
+
+
+</body>
+</html>
