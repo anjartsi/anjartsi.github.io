@@ -40,6 +40,12 @@ $(document).ready(function() {
 		$("#defeat").addClass("hide");
 	})
 
+	$('#startNewGameBtn').mouseup(function(e) {
+		myGame.guessesLeft = 0;
+		myGame.redraw();
+		myGame.lose();
+	})
+
 	$('#keepTryingBtn').mouseup(function(e) {
 		$("#keepTryingMsg").removeClass("hide");
 	})
