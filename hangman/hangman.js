@@ -15,7 +15,7 @@ class Hangman {
 		this.ctx = document.getElementById("can").getContext('2d');
 		this.redraw();
 		// Make this cleaner
-		$(".findMeaning").children("a").attr("href", "https://www.google.com/#q=" + this.word.toLowerCase() + "&*")
+		$(".findMeaning").children("a").attr("href", "https://www.google.com/#q=" + this.word.toLowerCase() + "&*");
 	}
 
 	// Returns the correct number of _'s for to 
