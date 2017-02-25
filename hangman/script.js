@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	// set up game
  	myGame = new Hangman();
- 	myGame.qwertyKeyboard();
+ 	myGame.alphaKeyboard();
 
 	// When window is resized
 	$(window).resize(resizeButtons);
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 	$('.startNewGame').mouseup(function(e) {
 		myGame = new Hangman();
-		myGame.qwertyKeyboard();
+		myGame.alphaKeyboard();
 		$("#newGameMsg").removeClass("hide");
 		$("#keyboard").removeClass("hide");
 		$("#victory").addClass("hide");
