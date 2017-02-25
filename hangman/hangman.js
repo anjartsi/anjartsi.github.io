@@ -13,8 +13,9 @@ class Hangman {
 
 		// Canvas
 		this.ctx = document.getElementById("can").getContext('2d');
-
 		this.redraw();
+		// Make this cleaner
+		$(".findMeaning").children("a").attr("href", "https://www.google.com/#q=" + this.word.toLowerCase() + "&*")
 	}
 
 	// Returns the correct number of _'s for to 
@@ -51,6 +52,7 @@ class Hangman {
 
 	// Handles the user input
 	guessLetter(ltr) {
+		if(this.guessesLeft == 0) return null;
 		let letter = ltr.toUpperCase();
 		// If the letter hasn't already been guessed yet
 		if(!this.disabledLetters.includes(letter)) {

@@ -58,6 +58,8 @@ $(document).ready(function() {
 			myGame.guessLetter(String.fromCharCode(pressed));
 		}
 	})
+
+	
 }) // End document.ready()
 
 function prepareKeyboard() {
