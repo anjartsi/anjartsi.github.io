@@ -12,27 +12,16 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/metaphor.css">
 	<!-- End Copied from Metaphor Documentation -->
 	<link rel="stylesheet" type="text/css" href="style.css">  
+	<link rel="stylesheet" type="text/css" href="../globalStyle.css">	
 </head>
 
-<body class="bg--black">
+<body class="color3">
 	
 	<!-- NavBar -->
-	<nav class="primary-nav">
-		<div class="container">
-			<!-- Mobile-only -->
-			<div class="primary-nav__mobile">
-				<div class="primary-nav__btn">
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-				</div>
-				<div class="primary-nav__brand">	
-					<span class="sr-only">Shush, I'm hiding</span>
-				</div>
-			</div> <!-- End nav__mobile -->
-			<ul class="primary-nav__links"></ul>
-		</div>		
+	<nav class="color5">
+		<ul id="navBar"></ul>
 	</nav>
+	<div id="buffer"></div>
 
 	<!-- Main Body -->
 	<div class="container">
@@ -172,21 +161,22 @@
 
 	</div> <!-- End Main Body -->
 
-<script
-  src="src/js/vendor/jquery.js"></script>
+<script type="text/javascript" src="../globalFunctions.js"></script>
+<script type="text/javascript" src="../navBar.js"></script>
+<script src="src/js/vendor/jquery.js"></script>
 <script src="dist/js/metaphor.js"></script>
 <script type="text/javascript" src="top-secret.js"></script>
 <script type="text/javascript" src="hangman.js"></script>
 <script type="text/javascript" src="script.js"></script>
+
 </body>
 
 </html>
 
-<!--
+<!-- Todo
 [ ] Navbar 
 	[ ] Brand
 	[X] Start New Game
-	[ ] Give Up
 
 [X] Canvas
 	[X] Draw Empty Gallows 
