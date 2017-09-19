@@ -6,7 +6,6 @@ var nav = document.getElementById("navBar");
 var pageName = document.getElementById("pageName");
 
 nav.innerHTML += createLink("Home", "../home/index.html");
-nav.innerHTML += createLink("Projects", "../home/index.html#projects");
 //nav.innerHTML += createLink("Blog", "../resume/index.html");
 
 // returns a string of the form "<li><a href='url'>name [optional]</a></li>"
@@ -62,12 +61,3 @@ for (var i = 0; i < pm.length; i++) {
 }
 
 
-/*************************************************************************
-                  Vertical Align: Center
-Vertically centers an element based on its height and its parent element height
-**************************************************************************/
-function verticalCenter(elem) {
-  var elemHeight = elem.clientHeight;
-  var containerHeight = elem.parentElement.clientHeight;
-  elem.style.marginTop = ( containerHeight - elemHeight ) / 2 + "px";
-}
